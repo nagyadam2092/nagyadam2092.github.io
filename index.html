@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.get("https://api.github.com/users/nagyadam2092/repos", function(data){
+		if(data){
+			var $gitProjects = $("#gitProjects");
+			data.forEach(function(repo){
+				$gitProjects.append('<li><a href="' + repo.html_url + '" target="_blank">' + repo.html_url + '</a></li>');
+			});
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<ul id="gitProjects"></ul>
+</body>
+</html>
