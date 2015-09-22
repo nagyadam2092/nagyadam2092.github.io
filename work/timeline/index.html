@@ -37,7 +37,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Work<span class="caret"></span></a>
           <ul class="dropdown-menu">
-          	<li><a href="work/timeline">TimelineRX</a></li>
+          	<li><a href="work/timeline" class="active">TimelineRX</a></li>
           	<li><a href="work/gpsfutar">GPSFutár.hu</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="work/diploma">Diploma</a></li>
@@ -60,54 +60,31 @@
 
 <!-- CONTENT -->
 <div class="container">
-	<div class="jumbotron">
-		<div class="row">
-			<div class="col-md-8">
-				<h1>Adam Nagy<h1>
-				<h2>electrical and computer engineer</h2>
-				<blockquote  class="blockquote-reverse">
-				  <p>You can discover more about a person in an hour of play than in a year of conversation.</p>
-				  <footer>Plato</footer>
-				</blockquote>
-			</div>
-			<div class="col-md-4 hidden-sm hidden-xs">
-				<img src="http://nagyadam.net63.net/img/logotype.jpg">
-			</div>
-		</div>
+	
 	</div>
 	<div class="row">
-		<p>CV: <a href="http://nagyadam.net63.net/Adam_Nagy_CV.pdf">Adam Nagy CV</a></p>
-		<p>Phone: <a href="tel:0036304859189">0036304859189</a></p>
-		<p>e-mail: <a href="mailto:nagyadam2092@gmail.com">nagyadam2092@gmail.com</a></p>
-		<p>GitHub: <a href="https://github.com/nagyadam2092" target="_blank">https://github.com/nagyadam2092</a></p>
-		<p>Blog: <a href="http://nagyadam2092.blogspot.hu/" target="_blank">http://nagyadam2092.blogspot.hu/</a></p>
+    TimelineRX is a U.S. based software development team. I was working there as a full-stack computer engineer, technologies involved: 
+
+    <p>Backend<p>
+      <ul>
+        <li>Koa.js (JS, ES6)</li>
+        <li>Elastic search (JAVA)</li>
+        <li>Spring (JAVA)</li>
+      </ul>
+    <p>Frontend (JS, CSS)<p>
+      <ul>
+        <li>AngularJS (ES6 transpiled)</li>
+        <li>D3.js (C3.js)</li>
+        <li>jQuery</li>
+        <li>Bootstrap</li>
+      </ul>
 	</div>
 </div>
 <!-- END OF CONTENT -->
-	<ul id="gitProjects"></ul>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script>
-$(document).ready(function(){
-	var blogId = 1762524982174490639;
-	var APIKey = "AIzaSyBskSuKFLJGb6GTu6DP03xeqyr3ehXJ6kI";
-
-	$.get("https://api.github.com/users/nagyadam2092/repos", function(data){
-		if(data){
-			var $gitProjects = $("#gitProjects");
-			data.forEach(function(repo){
-				$gitProjects.append('<li><a href="' + repo.html_url + '" target="_blank">' + repo.html_url + '</a></li>');
-			});
-		}
-	});
-
-	$.get("https://www.googleapis.com/blogger/v3/blogs/" + blogId + "?key=" + APIKey, function(data){
-		console.log(data);
-	});
-});
-</script>
 </body>
 </html>
