@@ -84,11 +84,9 @@ $(document).ready(function(){
 		}
 	});
 
-	$.get("https://www.googleapis.com/blogger/v3/blogs/" + blogId + "/posts?key=" + APIKey, function(data){
+	$.get("https://www.googleapis.com/blogger/v3/blogs/" + blogId + "?key=" + APIKey, function(data){
 		console.log(data);
 	});
-
-	1762524982174490639
 });
 </script>
 </body>
