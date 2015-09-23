@@ -15,7 +15,7 @@ $(document).ready(function(){
 				var post = {};
 				post.title = "[GitHub] " + GPost.name;
 				post.description = GPost.description;
-				post.link = GPost.url;
+				post.link = GPost.html_url;
 				post.brand = "http://cdn.flaticon.com/png/256/25231.png";
 				posts.push(post);
 			});
