@@ -28,7 +28,7 @@ $(document).ready(function(){
 			console.log(posts);
 			shuffle(posts);
 			posts.forEach(function(post){
-				$posts.append('<div class="col-md-4"><a href="' + post.link + '" target="_blank"><h3>' + post.title + '</h3><p>' + post.description < postLength ? post.description : post.description.substr(0,postLength) + '</p></a></div>')
+				$posts.append('<div class="col-md-4"><a href="' + post.link + '" target="_blank"><h3>' + post.title + '</h3><p>' + post && post.description < postLength ? post.description : post.description.substr(0,postLength) + '</p></a></div>')
 			});
 
 			function shuffle(array) {
