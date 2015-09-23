@@ -13,7 +13,7 @@ $(document).ready(function(){
 			var postLength = 50;
 			gitPosts.forEach(function(GPost){
 				var post = {};
-				post.title = GPost.name;
+				post.title = "[GitHub] " + GPost.name;
 				post.description = GPost.description;
 				post.link = GPost.url;
 				post.brand = "http://cdn.flaticon.com/png/256/25231.png";
@@ -21,7 +21,7 @@ $(document).ready(function(){
 			});
 			bloggerPosts.forEach(function(BPost){
 				var post = {};
-				post.title = BPost.title;
+				post.title = "[blog] " + BPost.title;
 				post.description = BPost.content;
 				post.link = BPost.url;
 				post.brand = "http://wiki.ivsa.org/images/d/d5/Blogger_logo.png";
@@ -31,8 +31,9 @@ $(document).ready(function(){
 			shuffle(posts);
 			$posts.append('<h2 class="col-md-12">Some of my articles and repos</h2>');
 			posts.forEach(function(post){
-				$posts.append('<div class="col-md-4"><img class="post-logo" src=" ' 
-					+ post.brand + '">'
+				$posts.append('<div class="col-md-4">'
+					//+ '<img class="post-logo" src=" ' 
+					//+ post.brand + '">'
 					+ '<a href="' 
 					+ post.link 
 					+ '" target="_blank"><h3>' 
