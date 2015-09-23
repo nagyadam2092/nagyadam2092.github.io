@@ -31,7 +31,7 @@ $(document).ready(function(){
 			shuffle(posts);
 			$posts.append('<h2 class="col-md-12">Some of my articles and repos</h2>');
 			posts.forEach(function(post){
-				$posts.append('<div class="col-md-4"><img src=" ' 
+				$posts.append('<div class="col-md-4 post-logo"><img src=" ' 
 					+ post.brand + '">'
 					+ '<a href="' 
 					+ post.link 
