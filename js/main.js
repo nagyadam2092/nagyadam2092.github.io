@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	$.when(
 		$.get("https://api.github.com/users/nagyadam2092/repos"),
-		$.get("https://www.googleapis.com/blogger/v3/blogs/" + blogId + "/posts?key=" + APIKey)
+		$.get("https://www.googleapis.com/blogger/v3/blogs/" + blogId + "/posts?key=" + APIKey))
 		.done(function(git, blogger){
 			console.log(git);
 			console.log(blogger);
