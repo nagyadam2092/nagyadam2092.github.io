@@ -16,6 +16,7 @@ $(document).ready(function(){
 				post.title = GPost.name;
 				post.description = GPost.description;
 				post.link = GPost.url;
+				post.brand = "http://cdn.flaticon.com/png/256/25231.png";
 				posts.push(post);
 			});
 			bloggerPosts.forEach(function(BPost){
@@ -23,12 +24,16 @@ $(document).ready(function(){
 				post.title = BPost.title;
 				post.description = BPost.content;
 				post.link = BPost.url;
+				post.brand = "http://wiki.ivsa.org/images/d/d5/Blogger_logo.png";
 				posts.push(post);
 			});
 			console.log(posts);
 			shuffle(posts);
+			$posts.append('<h2 class="col-md-12">Some of my articles and repos</h2>');
 			posts.forEach(function(post){
-				$posts.append('<div class="col-md-4"><a href="' 
+				$posts.append('<div class="col-md-4"><img src=" ' 
+					+ post.brand + '">'
+					+ '<a href="' 
 					+ post.link 
 					+ '" target="_blank"><h3>' 
 					+ post.title + '</h3>'
