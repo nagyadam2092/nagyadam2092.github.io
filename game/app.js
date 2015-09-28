@@ -39,13 +39,14 @@ var Game = (function Game(){
 	        this.load.image('bug', 'img/bug.png');
 	        this.load.image('background', 'img/monitor.png');
 	        this.load.image('bulletTry', 'img/try.png');
+	        //this.getImage("bulletTry").width = 74;
 	        this.load.image('bulletCatch', 'img/catch.png');
 	    },
 	    create: function () {
 	        this.background = this.add.sprite(0, 0, 'background');
 	        
 		    this.bullets = game.add.physicsGroup();
-		    for(var i=0; i<32; i++){
+		    for(var i=0; i<10; i++){
 		    	this.bullets.createMultiple(1, 'bulletTry', false);
 		    	this.bullets.createMultiple(1, 'bulletCatch', false);
 		    }
@@ -57,6 +58,7 @@ var Game = (function Game(){
 		    this.bullets.setAll('outOfBoundsKill', true);
 
 		    this.enemies.setAll('checkWorldBounds', true);
+		    //this.enemies.events.onOutOfBounds.add(this.enemyOutOfBound, this);
 		    this.enemies.setAll('outOfBoundsKill', true);
 
 		    this.player = game.add.sprite(400, 150, 'adam');
@@ -82,7 +84,6 @@ var Game = (function Game(){
 	    },
 	    createEnemy: function(){
 	    	this.enemy = this.enemies.getFirstExists(false);
-
 	    	if(this.enemy){
 	    		this.enemy.reset(getRandomInt(23,600), -52);
 	    		this.enemy.body.velocity.y = 10;
@@ -91,11 +92,17 @@ var Game = (function Game(){
 	    collisionHandler: function(enemy, bullet){
 	    	bullet.kill();
 	    	enemy.kill();
-	    	this.score += 10;
+	    	this.score += 20;
 	    	this.scoreText.text = "Score: " + this.score;
 	    },
 	    enemyHitsPlayer: function(player, enemy){
-	    	player.kill();
+    		enemy.alreadyHit = true;
+	    	this.score = this.score - 50 > 0 ? this.score - 50 :  0;
+	    	this.scoreText.text = "Score: " + this.score;
+	    	enemy.kill();
+	    },
+	    enemyOutOfBound: function(enemy){
+	    	console.log(enemy);
 	    },
 	    update: function () {
 	    	this.counter++;
@@ -121,7 +128,7 @@ var Game = (function Game(){
 
 		    //  Run collision
 	        game.physics.arcade.overlap(this.enemies, this.bullets, this.collisionHandler, null, this);
-	        //game.physics.arcade.overlap(this.adam, this.enemies, this.enemyHitsPlayer, null, this);
+	        game.physics.arcade.overlap(this.enemies, this.player, this.enemyHitsPlayer, null, this);
 	    }
 	};
 
