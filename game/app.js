@@ -62,6 +62,13 @@ var Game = (function Game(){
 		    this.enemies.setAll('checkWorldBounds', true);
 		    //this.enemies.events.onOutOfBounds.add(this.enemyOutOfBound, this);
 		    this.enemies.setAll('outOfBoundsKill', true);
+		    this.enemies.setAll("events.onOutOfBounds", this.enemyOutOfBound);
+		    
+		    this.enemies.children.forEach(function(bug){
+		    	bug.events.onOutOfBounds = this.enemyOutOfBound;
+		    });
+
+		    console.log(this.enemies);
 
 		    this.player = game.add.sprite(400, 150, 'adam');
 		    this.game.physics.arcade.enable(this.player);
@@ -108,7 +115,6 @@ var Game = (function Game(){
 	    },
 	    update: function () {
 	    	this.counter++;
-	    	console.log(this.counter);
 		    this.player.body.velocity.x = 0;
 
 		    if( (this.counter % 50 === 0 && this.counter > 0 && this.counter <= 300) 
