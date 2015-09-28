@@ -24,6 +24,8 @@ var Game = (function Game(){
 
 		this.enemies = null;
 		this.enemy = null;
+
+		this.levels = [];
 	};
 	PhaserGame.prototype = {
 	    init: function () {
@@ -106,9 +108,14 @@ var Game = (function Game(){
 	    },
 	    update: function () {
 	    	this.counter++;
+	    	console.log(this.counter);
 		    this.player.body.velocity.x = 0;
 
-		    if(this.counter % 50 === 0){
+		    if( (this.counter % 50 === 0 && this.counter > 0 && this.counter <= 300) 
+		    	|| (this.counter % 40 === 0 && this.counter > 300 && this.counter <= 600)
+		    	|| (this.counter % 30 === 0 && this.counter > 600 && this.counter <= 800)
+		    	|| (this.counter % 20 === 0 && this.counter > 800 && this.counter <= 1000)
+		    	|| (this.counter % 10 === 0 && this.counter > 1000)){
 		    	this.createEnemy();
 		    }
 
