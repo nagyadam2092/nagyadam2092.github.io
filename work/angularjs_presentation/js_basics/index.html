@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Adam Nagy AngularJS basics</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/sky.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <style>
+        .passing-data-into-a-directive div {
+            height: 200px;
+        }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>JavaScript</h1>
+            <h3>basics</h3>
+            <img src="img/js_logo.png" style="height: 25%; width: 25%;">
+
+            <p>
+                <small>Created by <a href="http://nagyadam2092.github.io/">Adam Nagy</a> / <a
+                        href="http://nagyadam2092.blogspot.hu/">blog</a></small>
+            </p>
+        </section>
+
+        <section>
+            <p>You can find this presentation here:</p>
+            <p><a href="https://github.com/nagyadam2092/AngularJS-presentation-Frankfurt">https://github.com/nagyadam2092/AngularJS-presentation-Frankfurt</a></p>
+        </section>
+
+        <section>
+            <h2>History</h2>
+            <img src="img/Brendan_Eich_Mozilla_Foundation_official_photo.jpg" alt="" style="display: inline; width: 20%; height: 20%;">
+            <ul>
+                <li>Brendan Eich (1995) --> NetScape 2 in 1996</li>
+                <li>originally "LiveScript" --> JAVA is popular --> JavaScript..</li>
+                <li>Several months later Netscape submitted JavaScript to Ecma International</li>
+                <li>EcmaScript standard that year (EcmaScript3 in 1999)</li>
+                <li>EcmaScript 5 in 2009 (!)</li>
+                <li>6th edition (or EcmaScript2015) in June of 2015</li>
+
+            </ul>
+
+            <aside class="notes">
+                <li>Brendan Eich (1995)</li>
+                <li>First release with NetScape 2 in 1996</li>
+                <li>originally "LiveScript" --> JAVA is popular --> JavaScript..</li>
+                <li>Several months later Microsoft's JScript (IE3)</li>
+                <li>Several months later Netscape submitted JavaScript to Ecma International</li>
+                <li>EcmaScript standard that year</li>
+                <li>In 1999 EcmaScript 3 (pretty stable)</li>
+                <li>4th edition was skipped.. (because of language complexity)</li>
+                <li>EcmaScript 5 in 2009 (!)</li>
+                <li>6th edition (or EcmaScript2015) in June of 2015</li>
+            </aside>
+        </section>
+
+        <section>
+            <h2>JavaScript</h2>
+            <ul>
+                <li>"JavaScript is a high-level, dynamic, untyped interpreted programming language"</li>
+                <li class="fragment">- not compiled</li>
+                <li class="fragment">mostly interpreted by the browser, but also
+                <ul class="fragment">
+                    <li>Adobe Acrobat, Photoshop</li>
+                    <li>SVG images</li>
+                    <li>server-side (Node.js)</li>
+                    <li>NoSQL databases (CouchDB)</li>
+                    <li>etc..</li>
+                </ul></li>
+            </ul>
+            <aside class="notes">
+                <ul>
+                    <li>quote from - JavaScript: The Definitive Guide</li>
+                    <li>interpreted runtime typically by the client browser -  not compiled</li>
+                    <li>HOWEVER "V8 increases performance by compiling JavaScript to native machine code before executing it, versus executing bytecode or interpreting it."</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section>
+            <h2>Overview</h2>
+            <ul>
+                <li class="fragment">JavaScript is
+                    <ul>
+                        <li>an object-oriented</li>
+                        <li>dynamic language </li>
+                        <li>with types and operators</li>
+                        <li>standard built-in objects, and methods</li>
+                    </ul>
+                </li>
+                <li class="fragment">syntax is based on C/JAVA - differences
+                    <ul>
+                        <li>no classes (ehm.. ES6)</li>
+                        <li>object prototype</li>
+                        <li><b>functions are objects</b></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <aside class="notes">
+            </aside>
+        </section>
+
+        <section>
+            <h2>Types</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" title="The Number JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the Number() constructor."><code>Number</code></a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" title="The String global object is a constructor for strings, or a sequence of characters."><code>String</code></a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="The Boolean object is an object wrapper for a boolean value."><code>Boolean</code></a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol" title="A symbol is a unique and immutable data type and may be used as an identifier for object properties. The symbol object is an implicit object wrapper for the symbol primitive data type."><code>Symbol</code></a> (new in Edition 6)</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" title="The Object constructor creates an object wrapper."><code>Object</code></a>
+                    <ul class="fragment">
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" title="The Function constructor creates a new Function object. In JavaScript every function is actually a Function object."><code>Function</code></a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" title="The JavaScript Array&nbsp;object is a global object that&nbsp;is used in the&nbsp;construction&nbsp;of&nbsp;arrays; which are high-level, list-like objects."><code>Array</code></a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" title="Creates a JavaScript Date instance that represents a single moment in time. Date objects are based on a time value that is the number of milliseconds since 1 January, 1970 UTC."><code>Date</code></a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="The RegExp constructor creates a regular expression object for matching text with a pattern."><code>RegExp</code></a></li>
+                    </ul>
+                </li>
+                <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null" title="The value null&nbsp;represents the intentional absence of any object value. It is one of JavaScript's primitive values."><code>null</code></a></li>
+                <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined" title="The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types."><code>undefined</code></a></li>
+            </ul>
+
+            <aside class="notes">
+                oh, and undefined and null, which are ... slightly odd. And Array, which is a special kind of object. And Date and RegExp, which are objects that you get for free. And to be technically accurate, functions are just a special type of object.
+                And there are some built-in Error types as well.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Numbers</h2>
+            <p>There's no such thing as Integer in JS. --> Be careful!</p>
+            <code>0.1 + 0.2 == 0.30000000000000004</code>
+            <p class="fragment">String to Integer with parseInt</p>
+            <p class="fragment"><code>parseInt("010", 10); // 10</code></p>
+            <p class="fragment"><code>parseInt("11", 2); // 3</code></p>
+            <p class="fragment"><code>+"010" // 10</code></p>
+            <p class="fragment"><code>1/0 //Infinity</code></p>
+            <p class="fragment"><code>isFinite(1/0) //false</code></p>
+
+            <aside class="notes">
+                Numbers in JavaScript are "double-precision 64-bit format IEEE 754 values", according to the spec.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Strings</h2>
+            <p>sequences of Unicode characters</p>
+            <p>Single characters by strings as well (<code>"a"</code>)</p>
+            <p class="fragment"><code>"hello".length; // 5</code></p>
+            <p class="fragment">Strings have methods as well</p>
+            <p class="fagment"><code>"hello".charAt(0); // "h"</code></p>
+            <p class="fagment"><code>"hello".toUpperCase(); // "HELLO"</code></p>
+
+            <aside class="notes">
+                More accurately, they are sequences of UTF-16 code units; each code unit is represented by a 16-bit number.
+                <br>
+                "hello".length; // 5 --> There's our first brush with JavaScript objects! Did we mention that you can use strings like objects too?
+            </aside>
+        </section>
+
+        <section>
+            <h2>Other types</h2>
+            <p>difference between <code>null</code> and <code>undefined</code></p>
+            <p class="fragment"><code>null</code> indicates a deliberate non-value</p>
+            <p class="fragment"><code>undefined</code> indicates an uninitialized value</p>
+
+            <aside class="notes">
+                We'll talk about variables later, but in JavaScript it is possible to declare a variable without assigning a value to it. If you do this, the variable's type is undefined. undefined is actually a constant.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Booleans</h2>
+            <p><code>true</code> and <code>false</code></p>
+            <p class="fragment">but... any value can be converted to boolean</p>
+            <ul class="fragment">
+                <li>falsy values
+                    <ul class="fragment">
+                        <li>false</li>
+                        <li>0</li>
+                        <li>""</li>
+                        <li>NaN</li>
+                        <li>null</li>
+                        <li>undefined</li>
+                    </ul>
+                </li>
+                <li class="fragment">truthy values
+                <ul>
+                    <li class="fragment">all other values</li>
+                </ul></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Variables</h2>
+            <p>new variables with the <code>var</code> keyword</p>
+            <pre><code class="js">var a;
+var name = "adam";
+                </code></pre>
+            <p class="fragment">if you declare a variable without assigning any value to it, its type is <code>undefined</code></p>
+            <p class="fragment">no block scopes <span class="fragment">(..ES6?)</span></p>
+        </section>
+
+        <section>
+            <h2>Hoisting</h2>
+            <p>in JS a variable can be declared after it's been used</p>
+            <pre class="fragment"><code class="js">x = 5; // Assign 5 to x
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element, which is 5
+var x; // Declare x
+            </code></pre>
+            <p class="fragment">moving all declarations to the top of the current scope </p>
+            <p class="fragment">(to the top of the current script or the current function)</p>
+        </section>
+
+        <section>
+            <h2>Objects</h2>
+            <p class="fragment">like HashMaps in Java</p>
+            <p class="fragment">key-value pairs</p>
+            <pre class="fragment"><code class="js">var obj = new Object();
+var obj = {}; //preferred
+var obj = {
+    name: "Carrot",
+    "for": "Adam",
+    details: {
+        color: "orange",
+        size: 12
+    }
+};
+obj.details.color; // orange
+obj["details"]["size"]; // 12</code></pre>
+        </section>
+
+        <section>
+            <h2>Arrays</h2>
+            <p>special type of object</p>
+            <p class="fragment">like regular objects, with a magic property</p>
+            <p class="fragment"><code>length</code></p>
+            <pre class="fragment"><code class="js">var a = ["dog", "cat", "hen"];
+a.length; // 3
+["dog", "cat", "mouse"].forEach(function(currentValue, index, array) {
+    // Do something with currentValue or array[index]
+});</code></pre>
+        </section>
+
+        <section>
+            <h2>Functions</h2>
+            <pre><code class="js">function add(x, y) {
+    var total = x + y;
+    return total;
+}
+add.variable = 'a variable'; //valid</code></pre>
+            <p><pre><code class="js">function add() {
+var sum = 0;
+for (var i = 0, j = arguments.length; i < j; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+
+add(2, 3, 4, 5); // 14</code></pre></p>
+            <p><pre><code class="js">var avg = function() {
+    var sum = 0;
+    for (var i = 0, j = arguments.length; i < j; i++) {
+        sum += arguments[i];
+    }
+    return sum / arguments.length;
+};</code></pre></p>
+        </section>
+
+        <section>
+            <h2>Scopes in JS</h2>
+            <ul>
+                <li class="fragment">global scope <span class="fragment"> - ew</span></li>
+                <li class="fragment">local (function) scopes <span class="fragment"> - yay</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Global scope</h2>
+            <p class="fragment">pollution is bad</p>
+            <p class="fragment">use it as less as possible!</p>
+            <p class="fragment">it's variables are reachable inside functions</p>
+        </section>
+
+        <section>
+            <h2>Function scope</h2>
+            <p class="fragment">a function has it's own variables</p>
+            <p class="fragment">these are local variables</p>
+            <p class="fragment">- not reachable from the outside</p>
+            <p><pre class="fragment"><code class="js">var myFunction = function() {
+    var myVariable = 'just a var';
+};
+//myVariable is undefined here</code></pre></p>
+        </section>
+
+        <section>
+            <h2>IIFE and scopes</h2>
+            <p>Immediately Invoked Function Expression</p>
+            <pre class="fragment"><code class="js">var a = 1;
+var b = 2;
+
+//IIFE
+(function() {
+    var b = 3;
+    a += b;
+})();
+
+a; // 4
+b; // 2</code></pre>
+        </section>
+
+        <section>
+            <h2>Module pattern</h2>
+            <p>"private" and "public" variables</p>
+            <pre><code class="js">var module = (function module() {
+    var privateVar = 1;
+    var publicVar = 10;
+
+    function privateFunc() {
+        console.log('privateFunc');
+        privateVar++;
+        publicVar++;
+        return privateVar * 2;
+    }
+
+    function publicFunc() {
+        console.log('publicFunc');
+        privateFunc();
+    }
+
+    return {
+        publicVar: publicVar,
+        publicFunc: publicFunc
+    };
+})();</code></pre>
+        </section>
+
+        <section>
+            <h2>OO JavaScript</h2>
+            <p class="fragment">as we've seen before -  no classes <span class="fragment">ehm.. ES6</span></p>
+            <p class="fragment">instead we have functions, which are holding the functionalities like classes</p>
+        </section>
+
+        <section>
+            <h2>Functional inheritance</h2>
+            <pre><code class="js">//class Animal
+var Animal = function(_feet) {
+    this.feet = _feet;
+};
+Animal.prototype.eat = function() {
+    console.log("I am eating, omnomnom..");
+};
+Animal.prototype.info = function() {
+    console.log("I have this amount of feet: " + this.feet);
+};
+
+//class Cat extends Animal
+var Cat = function(_feet, _miceHaveEaten) {
+    Animal.call(this, _feet);
+    this.miceHaveEaten = _miceHaveEaten;
+    var privateVariable = "This is not available outside the class!";
+};
+Cat.prototype = new Animal();
+Cat.prototype.purr = function() {
+    console.log("Purrrrrr.........");
+};
+//polymorphism
+Cat.prototype.info = function() {
+    console.log("I have eaten this amount of mice so far: " + this.miceHaveEaten + ", also I have " + this.feet + " feet.");
+};
+
+var unicellular = new Animal(0);
+unicellular.eat();
+unicellular.info();
+
+var garfield = new Cat(4, 9001);
+garfield.eat();
+garfield.purr();
+garfield.info();</code></pre>
+        </section>
+
+        <section>
+            <h2>Let's override String!</h2>
+            <pre><code class="js">var s = "Adam";
+s.reversed(); // TypeError on line 1: s.reversed is not a function
+
+String.prototype.reversed = function reversed() {
+    var r = "";
+    for (var i = this.length - 1; i >= 0; i--) {
+        r += this[i];
+    }
+    return r;
+};
+
+s.reversed(); // madA
+
+"This can now be reversed".reversed(); // desrever eb won nac sihT</code></pre>
+        </section>
+
+        <section>
+            <h2>Closures</h2>
+            <pre><code class="js">function makeAdder(a) {
+    return function(b) {
+        return a + b;
+    };
+}
+var fiveAdder = makeAdder(5);
+var twentyAdder = makeAdder(20);
+fiveAdder(6); // ?
+twentyAdder(7); // ?</code></pre>
+
+            <aside class="notes">A closure is the combination of a function and the scope object in which it was created. Closures let you save state — as such, they can often be used in place of objects</aside>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '../plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: '../plugin/zoom-js/zoom.js', async: true},
+            {src: '../plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>

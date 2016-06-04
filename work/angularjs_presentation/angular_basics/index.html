@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Adam Nagy AngularJS basics</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/sky.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <style>
+        .passing-data-into-a-directive div {
+            height: 200px;
+        }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Angular.JS</h1>
+            <img src="img/AngularJS-large.png">
+
+            <h3>Basic Introduction</h3>
+
+            <p>
+                <small>Created by <a href="http://nagyadam2092.github.io/">Adam Nagy</a> / <a
+                        href="http://nagyadam2092.blogspot.hu/">blog</a></small>
+            </p>
+        </section>
+
+        <section>
+            <p>You can find this presentation here:</p>
+            <p><a href="https://github.com/nagyadam2092/AngularJS-presentation-Frankfurt">https://github.com/nagyadam2092/AngularJS-presentation-Frankfurt</a></p>
+        </section>
+
+        <section>
+            <h2>Why Angular?</h2>
+            <blockquote cite="https://angularjs.org/">
+                &ldquo;HTML is great for declaring static documents, but it falters when we try to use it for declaring
+                dynamic views in web-applications.
+                AngularJS lets you extend HTML vocabulary for your application.
+                The resulting environment is extraordinarily expressive, readable, and quick to develop.&rdquo;
+            </blockquote>
+            <p><a href="https://angularjs.org/">https://angularjs.org/</a></p>
+        </section>
+
+        <!--<section>-->
+            <!--<h2>Competitors</h2>-->
+            <!--<h4>An opinionated list</h4>-->
+            <!--<table>-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>Framework</th>-->
+                    <!--<th>Pros</th>-->
+                    <!--<th>Cons</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>React</td>-->
+                    <!--<td>$1</td>-->
+                    <!--<td>7</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>React with Redux/etc.</td>-->
+                    <!--<td>$2</td>-->
+                    <!--<td>18</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Ember</td>-->
+                    <!--<td>$3</td>-->
+                    <!--<td>2</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Backbone</td>-->
+                    <!--<td>$3</td>-->
+                    <!--<td>2</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>ExtJS</td>-->
+                    <!--<td>$3</td>-->
+                    <!--<td>2</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</section>-->
+
+        <section>
+            <h2>Modules</h2>
+
+            <p>Why to use modules?</p>
+            <ul>
+                <li class="fragment">polluting the global namespace is a (very) bad practice</li>
+                <li class="fragment">use independent, easily pluggable/unpluggable elements instead: modules</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modules #2</h2>
+
+            <p>Why are modules good?</p>
+            <ul>
+                <li class="fragment">no global namespace pollution</li>
+                <li class="fragment">easier to test</li>
+                <li class="fragment">code sharing made easier</li>
+                <li class="fragment">angular modules via <code>angular.module</code> function</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scopes in angular</h2>
+
+            <p>The scopes of the application refer to the application model.</p>
+            <ul>
+                <li class="fragment">scopes are the execution context for expressions</li>
+                <li class="fragment">The $scope object is where we define the business functionality of the application,
+                    the methods in our controllers, and properties in the views.
+                </li>
+                <li class="fragment">$scopes in AngularJS are arranged in a hierarchical structure that mimics the DOM
+                    and thus are nestable: We can reference properties on parent $scopes
+                </li>
+                <li class="fragment">If it sounds familiar it's not a coincidence <span
+                        class="fragment">... </span><span class="fragment"><code>prototype</code></span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scopes in angular #2</h2>
+            <ul>
+                <li class="fragment">$rootScope (ng-app) → JS global scope</li>
+                <li class="fragment">scopes are plain old JS objects (<code class="fragment">...POJSO??</code>)</li>
+                <li class="fragment">$scopes are ‘public’ in a sense of it is automatically accessible from the view
+                </li>
+                <li class="fragment">If it sounds familiar it's not a coincidence <span
+                        class="fragment">... </span><span class="fragment"><code>prototype</code></span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scope object lifecycle</h2>
+            <ul>
+                <li class="fragment">creation: when a directive / controller is created, it’s created automatically</li>
+                <li class="fragment">linking: all the scope variables are linked / attached to the view ($watch)</li>
+                <li class="fragment">updating: when the event loop is running, every child scope is performing it’s
+                    dirty checking. If any change is detected, scope object will fire the watch callback function
+                </li>
+                <li class="fragment">destruction: if a scope is not needed, will be destroyed automatically ($destroy to
+                    do it explicitly)
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Directive scopes</h2>
+
+            <p>Usually directives do not care about scopes, but there are some special directives, like ng-controller
+                and ng-repeat, which create their own scopes.</p>
+        </section>
+
+        <section>
+            <h2>Controllers</h2>
+
+            <p>The controller in AngularJS is a function that adds additional functionality to the scope of the view</p>
+
+            <p class="fragment">We use it to set up an initial state and to add custom behavior to the scope object.</p>
+
+            <p class="fragment">When we create a new controller on a page, Angular passes it a new $scope. This new
+                $scope is where we can set up the initial state of the scope on our controller</p>
+
+            <p class="fragment">This new $scope is where we can set up the initial state of the scope on our
+                controller</p>
+        </section>
+
+        <section>
+            <h2>Our first controller!</h2>
+
+            <p data-height="265" data-theme-id="0" data-slug-hash="dMaVzg" data-default-tab="js,result"
+               data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                    href="http://codepen.io/nagyadam2092/pen/dMaVzg/">Basic angular controller</a> by Adam Nagy (<a
+                    href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.
+            </p>
+            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
+        <section>
+            <h2>More controllers!</h2>
+
+            <p>define slim controllers!</p>
+
+            <p class="fragment">use services for complex logic</p>
+
+            <p class="fragment">Controller hierarchy</p>
+
+            <p class="fragment">By default, for any property that AngularJS cannot find on a local scope, AngularJS will
+                crawl up to the containing (parent) scope and look for the property or method there.
+                If AngularJS can’t find the property there, it will walk to that scope’s parent and so on and so forth
+                until it reaches the $rootScope.
+                If it doesn’t find it on the $rootScope, then it moves on and is unable to update the view.</p>
+        </section>
+
+        <section>
+            <h2>Code example!</h2>
+
+            <p data-height="400" data-theme-id="0" data-slug-hash="YqBreB" data-default-tab="js,result"
+               data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                    href="http://codepen.io/nagyadam2092/pen/YqBreB/">Basic angular controller</a> by Adam Nagy (<a
+                    href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2><code>{{ Expressions }}</code></h2>
+            <ul>
+                <li>expressions are very similar to <code>eval(javascript)</code></li>
+                <li class="fragment">using <code>{{ }}</code> in HTML</li>
+                <li class="fragment">all expressions are executed in the context of the scope and have access to local
+                    <code>$scope</code> variable
+                </li>
+                <li class="fragment">no errors are thrown</li>
+                <li class="fragment">no control flow function like if-else</li>
+                <li class="fragment">can accept filter and/or filter chains</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><code>Filters</code></h2>
+            <ul>
+                <li>provides a way to format data we display to the user</li>
+                <li class="fragment">JS: $filter service</li>
+                <li class="fragment">HTML: | (pipe)</li>
+                <p class="fragment">
+
+                <p data-height="265" data-theme-id="0" data-slug-hash="MyLOeG" data-default-tab="js,result"
+                   data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                        href="http://codepen.io/nagyadam2092/pen/MyLOeG/">Angular basic filter</a> by Adam Nagy (<a
+                        href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a
+                        href="http://codepen.io">CodePen</a>.</p>
+                </p>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Built-in filters</h2>
+            <ul>
+                <li class="fragment">
+                    currency
+                    <ul>
+                        <li>
+                            <code>{{ 123 | currency }}</code>
+                        </li>
+                    </ul>
+                </li>
+                <li class="fragment">
+                    date
+                    <ul>
+                        <li>
+                            <code>{{ today | date:'shortTime' }}</code>
+                        </li>
+                    </ul>
+                </li>
+                <li class="fragment">
+                    <code>filter</code>
+                    <ul>
+                        <li class="fragment">filterception</li>
+                        <li class="fragment">selects a subset of items from an array</li>
+                        <li class="fragment">
+                            <code>{{ ['Adam', 'Nagy', 'Lufthansa', 'Systems'] | filter:'n' }}</code>
+                        </li>
+                        <li class="fragment">returns <code>['Nagy', 'Lufthansa']</code></li>
+                    </ul>
+                </li>
+                <li class="fragment">
+                    and many-many more (uppercase, lowercase, orderBy, etc...)
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Creating our first own filter!</h2>
+
+            <p class="fragment">call <code>filter</code> function in Angular <code>module</code></p>
+
+            <p class="fragment">
+
+            <p data-height="265" data-theme-id="0" data-slug-hash="ZWwaej" data-default-tab="js,result"
+               data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                    href="http://codepen.io/nagyadam2092/pen/ZWwaej/">Angular basic custom filter</a> by Adam Nagy (<a
+                    href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.
+            </p>
+            </p>
+        </section>
+
+        <section>
+            <h2>Directives</h2>
+            <ul>
+                <li class="fragment">custom html elements and attributes</li>
+                <li class="fragment">probably the most important feature of Angular</li>
+                <li class="fragment">e.g. a button is the same, but "native"</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Our first directive</h2>
+
+            <p data-height="265" data-theme-id="0" data-slug-hash="jqdvLJ" data-default-tab="js,result"
+               data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                    href="http://codepen.io/nagyadam2092/pen/jqdvLJ/">Angular our first directive</a> by Adam Nagy (<a
+                    href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2>Directives!</h2>
+
+            <p>A directive can be</p>
+            <ul>
+                <li class="fragment">
+                    element (E)
+                </li>
+                <li class="fragment">
+                    attribute (A)
+                </li>
+                <li class="fragment">
+                    class (C)
+                </li>
+                <li class="fragment">
+                    comment (M)
+                </li>
+                <li class="fragment">
+                    or combined (EAC)
+                </li>
+            </ul>
+        </section>
+
+        <section class="passing-data-into-a-directive">
+            <h2>Passing data into a Directive</h2>
+
+            <p data-height="265" data-theme-id="0" data-slug-hash="aNXQag" data-default-tab="js,result"
+               data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                    href="http://codepen.io/nagyadam2092/pen/aNXQag/">Angular passing data to directives</a> by Adam
+                Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a
+                        href="http://codepen.io">CodePen</a>.</p>
+
+            <p class="fragment">using <code>scope</code> at the directive definition object we are declaring an isolated
+                scope</p>
+
+            <p class="fragment">the directive gets its own <code>$scope</code> object, which we can only use inside
+                other methods/expressions of the directive</p>
+        </section>
+
+        <section>
+            <h2>Basic <code>ng</code> attribute directives</h2>
+
+            <p class="fragment">pre-built directives developed by the Angular team</p>
+            <ul>
+                <li class="fragment">
+                    <code>ng-href</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-class</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-style</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-src</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-disabled</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-checked</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-readonly</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-selected</code>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Built-in directives - with child scope</h2>
+
+            <p class="fragment">pre-built directives developed by the Angular team</p>
+            <ul>
+                <li class="fragment">
+                    <code>ng-app</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-controller</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-if</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-click</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-model</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-repeat</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-init</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-show</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-bind</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-view</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-include</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-cloak</code>
+                </li>
+                <li class="fragment">
+                    <code>ng-bond-template</code>
+                </li>
+                <!--TODO-->
+                <li class="fragment">
+                    ... TODO just the most used ones here
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><code>ng-repeat</code></h2>
+
+            <p>one of the most used built-in directive</p>
+
+            <p data-height="265" data-theme-id="0" data-slug-hash="XdGmax" data-default-tab="js,result"
+               data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                    href="http://codepen.io/nagyadam2092/pen/XdGmax/">Angular basic ng-repeat</a> by Adam Nagy (<a
+                    href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2>Dig deeper with directives</h2>
+            <p>The simplest way to think about a directive is that it is simply a function that we run on a
+                particular DOM element.</p>
+                The <code>directive</code> function provides extra functionality.
+					<pre><code class="js">angular.module('myApp')
+    .directive('myDirective',
+    function($timeout, UserDefinedService) {
+    // directive definition goes here
+    });</code></pre>
+            <p>The <code>directive</code> method takes two arguments:</p>
+            <p class="fragment">name and factory function</p>
+            <!--<ul>-->
+                <!--<li>name</li>-->
+                <!--<li>factory function</li>-->
+            <!--</ul>-->
+        </section>
+
+        <section>
+            <h2>Directive definition</h2>
+					<pre><code class="js">angular.module('myApp', [])
+    .directive('myDirective', function() {
+    return {
+        restrict: String,
+        priority: Number,
+        terminal: Boolean,
+        template: String or Template Function: function(tElement, tAttrs)(...
+        },
+        templateUrl: String,
+        replace: Boolean or String,
+        scope: Boolean or Object,
+        transclude: Boolean,
+        controller: String or
+        function(scope, element, attrs, transclude, otherInjectables) {...
+        },
+        controllerAs: String,
+        require: String,
+        link: function(scope, iElement, iAttrs) {...
+        },
+        compile: // return an Object OR the link function
+        // as in below:
+        function(tElement, tAttrs, transclude) {
+        return {
+        pre: function(scope, iElement, iAttrs, controller) {...
+        },
+        post: function(scope, iElement, iAttrs, controller) {...
+        }
+    }
+    // or
+    return function postLink(...) {...
+    }
+    }
+    };</code></pre>
+        </section>
+
+        <section>
+            <h3>restrict</h3>
+            <ul>
+                <li><code>E</code></li>
+                <li><code>A</code> (by default)</li>
+                <li><code>C</code></li>
+                <li><code>M</code></li>
+            </ul>
+            <h3>template(Url)</h3>
+
+            <p>HTML template for our directive</p>
+
+            <h3>replace</h3>
+
+            <p>if set to true replaces original DOM element</p>
+
+        </section>
+
+        <section>
+            <h2>Directive Scopes</h2>
+            <ul>every directive invoked within the DOM will:
+                <li>direclty use e.g. the same $rootScope object</li>
+                <li>create a new object that inherits from this object</li>
+                <li>create an object that is isolated from the object</li>
+            </ul>
+            <p class="fragment">we can manipulate through the scope object in the directive definition object</p>
+        </section>
+
+        <section>
+            <h2><code>scope</code> options (boolean|object)</h2>
+            <p class="fragment">it's an optional parameter</p>
+            <p class="fragment">by default it's false, if set to true, creates a new scope, which prototypically inherits from it's parent scope</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="ONGQee" data-default-tab="html,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/ONGQee/">Angular directive scopes</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        </section>
+
+        <section>
+            <h2>Isolated scope</h2>
+            <p class="fragment">one of the most important/used feature in Angular</p>
+            <p class="fragment">a separated scope for directives</p>
+            <p class="fragment">to be able to create <b>reusable</b> components (directives)</p>
+            <p class="fragment">without polluting the scope around them</p>
+            <p class="fragment">or having their scope corrupted inadvertently</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="yOrKLV" data-default-tab="html,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/yOrKLV/">Angular directive isolated scopes</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        </section>
+
+        <section>
+            <h2>Another example for niherited / isolated scope</h2>
+            <p data-height="265" data-theme-id="0" data-slug-hash="KzYopM" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/KzYopM/">Angular directive inherited / isolated scopes</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        </section>
+
+        <section>
+            <h2>Binding strategies</h2>
+            <p class="fragment">Angular gives us the way to bind data <span class="fragment"> from outside the scope</span> <span class="fragment">to the directive's scope</span></p>
+            <p class="fragment">different strategies ofr binding:</p>
+            <ul class="fragment">
+                <li><code>@</code>: by value</li>
+                <li><code>&</code>: allows to pass values into the parent scope for evaluation in the expression defined in the attribute</li>
+                <li><code>=</code>: two-way data binding (or some would call it <code>bi-directional</code> data-binding)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Two-way data binding</h2>
+            <p>Probably the most used / known feature in Angular</p>
+            <p class="fragment">to bind the vlaue of a property inside the private scope of our directive to the value of an attributeavailable within the DOM</p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Other directive parameters</h2>
+                <p class="fragment">press your down arrow, Adam ;)</p>
+            </section>
+
+            <section>
+                <h2>controller</h2>
+                <p>the directive's controller</p>
+                <p>could reach services like <code>$scope, $element, etc..</code></p>
+            </section>
+
+            <section>
+                <h2>controllerAs</h2>
+                <p>define the name of the controller</p>
+                <pre><code class="js">angular.module('myApp'), [])
+    .directive('myDirective', function() {
+        return {
+            restrict: 'A',
+            template: '<div>{{ $ctrl.msg }}</div>',
+            controllerAs: '$ctrl',
+            controller: function() {
+                this.msg = 'Hello world!'
+            }
+        }
+    });
+</code></pre>
+            </section>
+
+            <section>
+                <h2>require</h2>
+                <p>to require other directives</p>
+            </section>
+
+        </section>
+
+        <section class="angular-lifecycle">
+            <h2>AngularJS Life Cycle</h2>
+            <img class="stretch" src="img/angularjs-lifecycle.png">
+        </section>
+
+        <section>
+            <h2>Link vs Controller (best practices)</h2>
+            <ul>
+                <li>link: use to register callbacks / DOM manipulation</li>
+                <li>controller: sort of an API: used when another directive needs to interact with this directive</li>
+            </ul>
+            <p class="fragment">However, you can put methods, $watches, etc. into either the directive's controller or link function, the controller will run first</p>
+        </section>
+
+        <section>
+            <h2>Angular module loading</h2>
+            <p class="fragment">configuration block: configure a module before it starts to run</p>
+            <pre><code class="js">angular.module('myApp', [])
+    .config(function($routeProvider){
+    });</code></pre>
+        </section>
+
+        <section>
+            <h2>Angular module loading - run blocks</h2>
+            <p>like config block - the difference is it's executed <i>after</i> the module was started</p>
+        </section>
+
+        <!--
+        TODO
+        <section>
+            <h2>Multiple Views and routing</h2>
+        </section>-->
+
+        <section>
+            <h2>Dependency Injection</h2>
+            <p class="fragment">design pattern: allows for the removal of hard-coded dependencies, thus making it possible to remove or change them at runtime</p>
+            <p class="fragment">really ideal for testing!</p>
+            <pre><code class="js">angular.module('myApp', [])
+    .factory(function('greeter', function() {
+        return {
+            greet: function(msg) {
+                console.log(msg);
+            }
+        }
+    })
+    .controller('MyController', function($scope, greeter) {
+        $scope.sayHello = function() {
+            greeter.greet('HelloBello!');
+        };
+    });</code></pre>
+        </section>
+
+        <section>
+            <h2>Dependency Injection - what could go wrong?</h2>
+            <p class="fragment">Let's look at the code we saw</p>
+            <p class="fragment">what could possibly go wrong?</p>
+            <h3 class="fragment">MINIFICATION</h3>
+        </section>
+
+        <section>
+            <h2>Dependency Injection - a solution to minification</h2>
+            <pre><code class="js">var ctrl = angular.module('myApp')
+    .controller('MyController', function(aVeryDifferentNameThanScope){
+        // can reach $scope via aVeryDifferentNameThanScope object
+    });
+ctrl.$inject = ['$scope'];</code></pre>
+        </section>
+
+
+        <section>
+            <h2>Services</h2>
+            <p class="fragment">a method to keep data around the app to communicate across controllers in a consistent manner</p>
+            <p class="fragment">singleton objects</p>
+        </section>
+
+        <section>
+            <h2>Services - example</h2>
+            <pre><code class="js">app.service('hexafy', function() {
+    this.myFunc = function (x) {
+        return x.toString(16);
+    }
+});</code></pre>
+    <p class="fragment">this service can be injected anywhere inside the app</p>
+        </section>
+
+        <section>
+            <h2>Section - example #2</h2>
+            <p data-height="265" data-theme-id="0" data-slug-hash="yOrKEz" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/yOrKEz/">Angular service example</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        </section>
+
+
+        <section>
+            <h2>The $digest loop and apply</h2>
+            <p class="fragment">$watch list: list of variables which are bound to the view</p>
+            <p class="fragment">dirty checking: a very basic concept, which checks values whether they had been synchronized across the app or not</p>
+            <p class="fragment">worth mentioning: this strategy is also used in game engines, db engines, Object Relational Mappers, etc..</p>
+        </section>
+
+        <section>
+            <h2>Dirty checking</h2>
+            <p class="fragment">the method</p>
+            <ul class="fragment">
+                <li>iteration through the watch list</li>
+                <li>check whether a value is dirty</li>
+                <li>if it's dirty assign the new value</li>
+                <li>if there were any assignments re-run the method</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>why does dirty checking need re-running?</h2>
+            <p class="fragment">if there is a value which has to be changed, it may change other values as well</p>
+            <p class="fragment">so dirty checking has to re-run</p>
+            <p class="fragment">fun fact: after 10 iteration Angular will throw an error (possible infinite loop)</p>
+            <p class="fragment">fun fact #2: the number 10 can be changed :)</p>
+        </section>
+
+        <section>
+            <h2>$watch</h2>
+            <p class="fragment">watchers could be set to detect changes in the view/model</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="dMLxap" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/dMLxap/">Angular $watch</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        </section>
+
+        <section>
+            <h2>jQuery and $apply</h2>
+            <p data-height="265" data-theme-id="0" data-slug-hash="RaOXXZ" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/RaOXXZ/">Angular, jQuery and $apply</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+        </section>
+
+        <!--<section>
+            <h2>Demystifying Angular - how the view works</h2>
+        </section>-->
+
+        <section>
+            <h2>Some libraries/extensions worth to mention</h2>
+            <ul>
+                <li><a href="https://angular-ui.github.io/" target="_blank">AngularUI</a></li>
+                <li><a href="https://angular-translate.github.io/">angular-translate</a></li>
+                <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek">Batarang</a></li>
+                <li><a href="https://karma-runner.github.io/">Karma</a></li>
+                <li><a href="https://jasmine.github.io/">Jasmine</a></li>
+                <li>...</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Thank you!</h2>
+            <img src="img/end_grumpy.jpg" alt="">
+        </section>
+
+
+    </div>
+
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '../plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: '../plugin/zoom-js/zoom.js', async: true},
+            {src: '../plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
