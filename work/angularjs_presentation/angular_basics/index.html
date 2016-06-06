@@ -76,44 +76,44 @@
         </section>
 
         <!--<section>-->
-            <!--<h2>Competitors</h2>-->
-            <!--<h4>An opinionated list</h4>-->
-            <!--<table>-->
-                <!--<thead>-->
-                <!--<tr>-->
-                    <!--<th>Framework</th>-->
-                    <!--<th>Pros</th>-->
-                    <!--<th>Cons</th>-->
-                <!--</tr>-->
-                <!--</thead>-->
-                <!--<tbody>-->
-                <!--<tr>-->
-                    <!--<td>React</td>-->
-                    <!--<td>$1</td>-->
-                    <!--<td>7</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>React with Redux/etc.</td>-->
-                    <!--<td>$2</td>-->
-                    <!--<td>18</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Ember</td>-->
-                    <!--<td>$3</td>-->
-                    <!--<td>2</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>Backbone</td>-->
-                    <!--<td>$3</td>-->
-                    <!--<td>2</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>ExtJS</td>-->
-                    <!--<td>$3</td>-->
-                    <!--<td>2</td>-->
-                <!--</tr>-->
-                <!--</tbody>-->
-            <!--</table>-->
+        <!--<h2>Competitors</h2>-->
+        <!--<h4>An opinionated list</h4>-->
+        <!--<table>-->
+        <!--<thead>-->
+        <!--<tr>-->
+        <!--<th>Framework</th>-->
+        <!--<th>Pros</th>-->
+        <!--<th>Cons</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr>-->
+        <!--<td>React</td>-->
+        <!--<td>$1</td>-->
+        <!--<td>7</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>React with Redux/etc.</td>-->
+        <!--<td>$2</td>-->
+        <!--<td>18</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Ember</td>-->
+        <!--<td>$3</td>-->
+        <!--<td>2</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Backbone</td>-->
+        <!--<td>$3</td>-->
+        <!--<td>2</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>ExtJS</td>-->
+        <!--<td>$3</td>-->
+        <!--<td>2</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+        <!--</table>-->
         <!--</section>-->
 
         <section>
@@ -144,15 +144,20 @@
             <p>The scopes of the application refer to the application model.</p>
             <ul>
                 <li class="fragment">scopes are the execution context for expressions</li>
-                <li class="fragment">The $scope object is where we define the business functionality of the application,
-                    the methods in our controllers, and properties in the views.
-                </li>
-                <li class="fragment">$scopes in AngularJS are arranged in a hierarchical structure that mimics the DOM
-                    and thus are nestable: We can reference properties on parent $scopes
+                <li class="fragment">$scope object &#8594; business functionality</li>
+                <li class="fragment">arranged in a hierarchical structure <span class="fragment"> - can reference on properties on parent scopes</span>
                 </li>
                 <li class="fragment">If it sounds familiar it's not a coincidence <span
                         class="fragment">... </span><span class="fragment"><code>prototype</code></span></li>
             </ul>
+
+            <aside class="notes"><ul>
+                <li>.</li>
+                <li>The $scope object is where we define the business functionality of the application,
+                    the methods in our controllers, and properties in the views.</li>
+                <li>$scopes in AngularJS are arranged in a hierarchical structure that mimics the DOM
+                    and thus are nestable: We can reference properties on parent $scopes</li>
+            </ul></aside>
         </section>
 
         <section>
@@ -162,23 +167,34 @@
                 <li class="fragment">scopes are plain old JS objects (<code class="fragment">...POJSO??</code>)</li>
                 <li class="fragment">$scopes are ‘public’ in a sense of it is automatically accessible from the view
                 </li>
-                <li class="fragment">If it sounds familiar it's not a coincidence <span
-                        class="fragment">... </span><span class="fragment"><code>prototype</code></span></li>
+                <!--<li class="fragment">If it sounds familiar it's not a coincidence <span-->
+                <!--class="fragment">... </span><span class="fragment"><code>prototype</code></span></li>-->
             </ul>
         </section>
 
         <section>
             <h2>Scope object lifecycle</h2>
             <ul>
-                <li class="fragment">creation: when a directive / controller is created, it’s created automatically</li>
-                <li class="fragment">linking: all the scope variables are linked / attached to the view ($watch)</li>
-                <li class="fragment">updating: when the event loop is running, every child scope is performing it’s
-                    dirty checking. If any change is detected, scope object will fire the watch callback function
+                <li class="fragment">creation (automatically)</li>
+                <li class="fragment">linking: scope variables are linked / attached to the view ($watch)</li>
+                <li class="fragment">updating: if any change is detected, scope object will fire the watch callback function
                 </li>
-                <li class="fragment">destruction: if a scope is not needed, will be destroyed automatically ($destroy to
-                    do it explicitly)
+                <li class="fragment">destruction: if a scope is not needed, will be destroyed automatically
                 </li>
             </ul>
+
+            <aside class="notes">
+                <ul>
+                    <li class="fragment">creation: when a directive / controller is created, it’s created automatically</li>
+                    <li class="fragment">linking: all the scope variables are linked / attached to the view ($watch)</li>
+                    <li class="fragment">updating: when the event loop is running, every child scope is performing it’s
+                        dirty checking. If any change is detected, scope object will fire the watch callback function
+                    </li>
+                    <li class="fragment">destruction: if a scope is not needed, will be destroyed automatically ($destroy to
+                        do it explicitly)
+                    </li>
+                </ul>
+            </aside>
         </section>
 
         <section>
@@ -186,6 +202,8 @@
 
             <p>Usually directives do not care about scopes, but there are some special directives, like ng-controller
                 and ng-repeat, which create their own scopes.</p>
+
+            <aside class="notes">directives are like components..</aside>
         </section>
 
         <section>
@@ -193,13 +211,18 @@
 
             <p>The controller in AngularJS is a function that adds additional functionality to the scope of the view</p>
 
-            <p class="fragment">We use it to set up an initial state and to add custom behavior to the scope object.</p>
+            <p class="fragment">initial state + add custom behavior to the scope object.</p>
 
-            <p class="fragment">When we create a new controller on a page, Angular passes it a new $scope. This new
-                $scope is where we can set up the initial state of the scope on our controller</p>
+            <p class="fragment">new controller &#8594; new $scope.</p>
 
-            <p class="fragment">This new $scope is where we can set up the initial state of the scope on our
-                controller</p>
+            <aside class="notes">
+                <p>The controller in AngularJS is a function that adds additional functionality to the scope of the view</p>
+
+                <p>We use it to set up an initial state and to add custom behavior to the scope object.</p>
+
+                <p>When we create a new controller on a page, Angular passes it a new $scope. This new
+                    $scope is where we can set up the initial state of the scope on our controller</p>
+            </aside>
         </section>
 
         <section>
@@ -220,13 +243,17 @@
 
             <p class="fragment">use services for complex logic</p>
 
-            <p class="fragment">Controller hierarchy</p>
+            <p class="fragment">Controller hierarchy:
+            <p class="fragment">local scope &#8594; parent scope &#8594; .. &#8594; $rootScope</p>
+            </p>
 
-            <p class="fragment">By default, for any property that AngularJS cannot find on a local scope, AngularJS will
+
+
+            <aside class="notes"><p>By default, for any property that AngularJS cannot find on a local scope, AngularJS will
                 crawl up to the containing (parent) scope and look for the property or method there.
                 If AngularJS can’t find the property there, it will walk to that scope’s parent and so on and so forth
                 until it reaches the $rootScope.
-                If it doesn’t find it on the $rootScope, then it moves on and is unable to update the view.</p>
+                If it doesn’t find it on the $rootScope, then it moves on and is <b>unable to update the view.</b></p></aside>
         </section>
 
         <section>
@@ -244,13 +271,26 @@
             <ul>
                 <li>expressions are very similar to <code>eval(javascript)</code></li>
                 <li class="fragment">using <code>{{ }}</code> in HTML</li>
-                <li class="fragment">all expressions are executed in the context of the scope and have access to local
+                <li class="fragment">executed on scope and have access to local
                     <code>$scope</code> variable
                 </li>
                 <li class="fragment">no errors are thrown</li>
                 <li class="fragment">no control flow function like if-else</li>
                 <li class="fragment">can accept filter and/or filter chains</li>
             </ul>
+
+            <aside class="notes">
+                <ul>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>all expressions are executed in the context of the scope and have access to local
+                        <code>$scope</code> variable
+                    </li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                </ul>
+            </aside>
         </section>
 
         <section>
@@ -258,15 +298,16 @@
             <ul>
                 <li>provides a way to format data we display to the user</li>
                 <li class="fragment">JS: $filter service</li>
-                <li class="fragment">HTML: | (pipe)</li>
-                <p class="fragment">
+                <li class="fragment">HTML: | (pipe)
+                    <p data-height="265" data-theme-id="0" data-slug-hash="MyLOeG" data-default-tab="js,result"
+                       data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
+                            href="http://codepen.io/nagyadam2092/pen/MyLOeG/">Angular basic filter</a> by Adam Nagy (<a
+                            href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a
+                            href="http://codepen.io">CodePen</a>.</p>
+                    </p>
+                </li>
 
-                <p data-height="265" data-theme-id="0" data-slug-hash="MyLOeG" data-default-tab="js,result"
-                   data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
-                        href="http://codepen.io/nagyadam2092/pen/MyLOeG/">Angular basic filter</a> by Adam Nagy (<a
-                        href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a
-                        href="http://codepen.io">CodePen</a>.</p>
-                </p>
+
             </ul>
         </section>
 
@@ -309,15 +350,12 @@
         <section>
             <h2>Creating our first own filter!</h2>
 
-            <p class="fragment">call <code>filter</code> function in Angular <code>module</code></p>
-
-            <p class="fragment">
+            <p>call <code>filter</code> function in Angular <code>module</code></p>
 
             <p data-height="265" data-theme-id="0" data-slug-hash="ZWwaej" data-default-tab="js,result"
                data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
                     href="http://codepen.io/nagyadam2092/pen/ZWwaej/">Angular basic custom filter</a> by Adam Nagy (<a
                     href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.
-            </p>
             </p>
         </section>
 
@@ -467,7 +505,7 @@
 
             <p>one of the most used built-in directive</p>
 
-            <p data-height="265" data-theme-id="0" data-slug-hash="XdGmax" data-default-tab="js,result"
+            <p data-height="365" data-theme-id="0" data-slug-hash="XdGmax" data-default-tab="js,result"
                data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a
                     href="http://codepen.io/nagyadam2092/pen/XdGmax/">Angular basic ng-repeat</a> by Adam Nagy (<a
                     href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.
@@ -478,55 +516,58 @@
             <h2>Dig deeper with directives</h2>
             <p>The simplest way to think about a directive is that it is simply a function that we run on a
                 particular DOM element.</p>
-                The <code>directive</code> function provides extra functionality.
+            The <code>directive</code> function provides extra functionality.
 					<pre><code class="js">angular.module('myApp')
-    .directive('myDirective',
-    function($timeout, UserDefinedService) {
-    // directive definition goes here
-    });</code></pre>
+                        .directive('myDirective',
+                        function($timeout, UserDefinedService) {
+                        // directive definition goes here
+                        });</code></pre>
             <p>The <code>directive</code> method takes two arguments:</p>
             <p class="fragment">name and factory function</p>
             <!--<ul>-->
-                <!--<li>name</li>-->
-                <!--<li>factory function</li>-->
+            <!--<li>name</li>-->
+            <!--<li>factory function</li>-->
             <!--</ul>-->
         </section>
 
         <section>
             <h2>Directive definition</h2>
 					<pre><code class="js">angular.module('myApp', [])
-    .directive('myDirective', function() {
-    return {
-        restrict: String,
-        priority: Number,
-        terminal: Boolean,
-        template: String or Template Function: function(tElement, tAttrs)(...
-        },
-        templateUrl: String,
-        replace: Boolean or String,
-        scope: Boolean or Object,
-        transclude: Boolean,
-        controller: String or
-        function(scope, element, attrs, transclude, otherInjectables) {...
-        },
-        controllerAs: String,
-        require: String,
-        link: function(scope, iElement, iAttrs) {...
-        },
-        compile: // return an Object OR the link function
-        // as in below:
-        function(tElement, tAttrs, transclude) {
-        return {
-        pre: function(scope, iElement, iAttrs, controller) {...
-        },
-        post: function(scope, iElement, iAttrs, controller) {...
-        }
-    }
-    // or
-    return function postLink(...) {...
-    }
-    }
-    };</code></pre>
+                        .directive('myDirective', function() {
+                        return {
+                        restrict: String,
+                        priority: Number,
+                        terminal: Boolean,
+                        template: String or Template Function: function(tElement, tAttrs)(...
+                        },
+                        templateUrl: String,
+                        replace: Boolean or String,
+                        scope: Boolean or Object,
+                        transclude: Boolean,
+                        controller: String or
+                        function(scope, element, attrs, transclude, otherInjectables) {...
+                        },
+                        controllerAs: String,
+                        require: String,
+                        link: function(scope, iElement, iAttrs) {...
+                        },
+                        compile: // return an Object OR the link function
+                        // as in below:
+                        function(tElement, tAttrs, transclude) {
+                        return {
+                        pre: function(scope, iElement, iAttrs, controller) {...
+                        },
+                        post: function(scope, iElement, iAttrs, controller) {...
+                        }
+                        }
+                        // or
+                        return function postLink(...) {...
+                        }
+                        }
+                        };</code></pre>
+            <aside class="notes">
+                NOW I WILL GO MORE IN DETAIL WITH THESE PARAMETERS
+            </aside>
         </section>
 
         <section>
@@ -550,9 +591,9 @@
         <section>
             <h2>Directive Scopes</h2>
             <ul>every directive invoked within the DOM will:
-                <li>direclty use e.g. the same $rootScope object</li>
-                <li>create a new object that inherits from this object</li>
-                <li>create an object that is isolated from the object</li>
+                <li class="fragment">direclty use e.g. the same $rootScope object</li>
+                <li class="fragment">create a new object that inherits from this object</li>
+                <li class="fragment">create an object that is isolated from the object</li>
             </ul>
             <p class="fragment">we can manipulate through the scope object in the directive definition object</p>
         </section>
@@ -572,28 +613,46 @@
             <p class="fragment">without polluting the scope around them</p>
             <p class="fragment">or having their scope corrupted inadvertently</p>
             <p data-height="265" data-theme-id="0" data-slug-hash="yOrKLV" data-default-tab="html,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/yOrKLV/">Angular directive isolated scopes</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+            <aside class="notes">
+                <ul>scope object
+                    <li>falsy: No scope will be created for the directive. The directive will use its parent's scope.</li>
+                    <li>true: A new child scope that prototypically inherits from its parent will be created for the directive's element. If multiple directives on the same element request a new scope, only one new scope is created. The new scope rule does not apply for the root of the template since the root of the template always gets a new scope.</li>
+                    <li>{...} (an object hash): A new "isolate" scope is created for the directive's element. The 'isolate' scope differs from normal scope in that it does not prototypically inherit from its parent scope. This is useful when creating reusable components, which should not accidentally read or modify data in the parent scope.</li>
+                </ul>
+            </aside>
         </section>
 
         <section>
-            <h2>Another example for niherited / isolated scope</h2>
+            <h2>Another example for inherited / isolated scope</h2>
             <p data-height="265" data-theme-id="0" data-slug-hash="KzYopM" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/KzYopM/">Angular directive inherited / isolated scopes</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         </section>
 
         <section>
             <h2>Binding strategies</h2>
             <p class="fragment">Angular gives us the way to bind data <span class="fragment"> from outside the scope</span> <span class="fragment">to the directive's scope</span></p>
-            <p class="fragment">different strategies ofr binding:</p>
+            <p class="fragment">different strategies for binding:</p>
             <ul class="fragment">
-                <li><code>@</code>: by value</li>
-                <li><code>&</code>: allows to pass values into the parent scope for evaluation in the expression defined in the attribute</li>
+                <li><code>@</code>: by value (evaluated by Angular)</li>
                 <li><code>=</code>: two-way data binding (or some would call it <code>bi-directional</code> data-binding)</li>
+                <li><code>&</code>: call an expression on the parent scope from the isolated scope</li>
+                <li><code><</code>: (>1.5) one-way binding</li>
             </ul>
+
+            <aside class="notes">
+                <ul>
+                    <li>@: my-attribute="something: {{property}}" - this is valid, and will execute on parent scope</li>
+                    <li>.</li>
+                    <li>&: mostly for passing functions (events) to call some functionality of the parent scope</li>
+                    <li>< : changes on the parent model will be reflected in the local model, but not the way back </li>
+                </ul>
+            </aside>
         </section>
 
         <section>
             <h2>Two-way data binding</h2>
             <p>Probably the most used / known feature in Angular</p>
-            <p class="fragment">to bind the vlaue of a property inside the private scope of our directive to the value of an attributeavailable within the DOM</p>
+            <p class="fragment">to bind the value of a property inside the private scope of our directive to the value of an attributeavailable within the DOM</p>
         </section>
 
         <section>
@@ -612,17 +671,17 @@
                 <h2>controllerAs</h2>
                 <p>define the name of the controller</p>
                 <pre><code class="js">angular.module('myApp'), [])
-    .directive('myDirective', function() {
-        return {
-            restrict: 'A',
-            template: '<div>{{ $ctrl.msg }}</div>',
-            controllerAs: '$ctrl',
-            controller: function() {
-                this.msg = 'Hello world!'
-            }
-        }
-    });
-</code></pre>
+                    .directive('myDirective', function() {
+                    return {
+                    restrict: 'A',
+                    template: '<div>{{ $ctrl.msg }}</div>',
+                    controllerAs: '$ctrl',
+                    controller: function() {
+                    this.msg = 'Hello world!'
+                    }
+                    }
+                    });
+                </code></pre>
             </section>
 
             <section>
@@ -650,8 +709,8 @@
             <h2>Angular module loading</h2>
             <p class="fragment">configuration block: configure a module before it starts to run</p>
             <pre><code class="js">angular.module('myApp', [])
-    .config(function($routeProvider){
-    });</code></pre>
+                .config(function($routeProvider){
+                });</code></pre>
         </section>
 
         <section>
@@ -670,18 +729,18 @@
             <p class="fragment">design pattern: allows for the removal of hard-coded dependencies, thus making it possible to remove or change them at runtime</p>
             <p class="fragment">really ideal for testing!</p>
             <pre><code class="js">angular.module('myApp', [])
-    .factory(function('greeter', function() {
-        return {
-            greet: function(msg) {
+                .factory(function('greeter', function() {
+                return {
+                greet: function(msg) {
                 console.log(msg);
-            }
-        }
-    })
-    .controller('MyController', function($scope, greeter) {
-        $scope.sayHello = function() {
-            greeter.greet('HelloBello!');
-        };
-    });</code></pre>
+                }
+                }
+                })
+                .controller('MyController', function($scope, greeter) {
+                $scope.sayHello = function() {
+                greeter.greet('HelloBello!');
+                };
+                });</code></pre>
         </section>
 
         <section>
@@ -694,10 +753,10 @@
         <section>
             <h2>Dependency Injection - a solution to minification</h2>
             <pre><code class="js">var ctrl = angular.module('myApp')
-    .controller('MyController', function(aVeryDifferentNameThanScope){
-        // can reach $scope via aVeryDifferentNameThanScope object
-    });
-ctrl.$inject = ['$scope'];</code></pre>
+                .controller('MyController', function(aVeryDifferentNameThanScope){
+                // can reach $scope via aVeryDifferentNameThanScope object
+                });
+                ctrl.$inject = ['$scope'];</code></pre>
         </section>
 
 
@@ -710,11 +769,11 @@ ctrl.$inject = ['$scope'];</code></pre>
         <section>
             <h2>Services - example</h2>
             <pre><code class="js">app.service('hexafy', function() {
-    this.myFunc = function (x) {
-        return x.toString(16);
-    }
-});</code></pre>
-    <p class="fragment">this service can be injected anywhere inside the app</p>
+                this.myFunc = function (x) {
+                return x.toString(16);
+                }
+                });</code></pre>
+            <p class="fragment">this service can be injected anywhere inside the app</p>
         </section>
 
         <section>
@@ -758,6 +817,13 @@ ctrl.$inject = ['$scope'];</code></pre>
         <section>
             <h2>jQuery and $apply</h2>
             <p data-height="265" data-theme-id="0" data-slug-hash="RaOXXZ" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/RaOXXZ/">Angular, jQuery and $apply</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <img src="img/scope_apply.jpg" alt="" class="fragment">
+            <aside class="notes">
+                <ul>
+                    <li>press the button - it shouldn't show a random number</li>
+                    <li>uncomment $scope.$apply();</li>
+                </ul>
+            </aside>
         </section>
 
         <!--<section>
@@ -774,6 +840,10 @@ ctrl.$inject = ['$scope'];</code></pre>
                 <li><a href="https://jasmine.github.io/">Jasmine</a></li>
                 <li>...</li>
             </ul>
+        </section>
+
+        <section>
+            <h2>Homework</h2>
         </section>
 
         <section>

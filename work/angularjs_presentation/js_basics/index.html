@@ -56,6 +56,8 @@
                 <small>Created by <a href="http://nagyadam2092.github.io/">Adam Nagy</a> / <a
                         href="http://nagyadam2092.blogspot.hu/">blog</a></small>
             </p>
+
+            <aside class="notes">mostly ES5</aside>
         </section>
 
         <section>
@@ -96,13 +98,13 @@
                 <li>"JavaScript is a high-level, dynamic, untyped interpreted programming language"</li>
                 <li class="fragment">- not compiled</li>
                 <li class="fragment">mostly interpreted by the browser, but also
-                <ul class="fragment">
-                    <li>Adobe Acrobat, Photoshop</li>
-                    <li>SVG images</li>
-                    <li>server-side (Node.js)</li>
-                    <li>NoSQL databases (CouchDB)</li>
-                    <li>etc..</li>
-                </ul></li>
+                    <ul class="fragment">
+                        <li>Adobe Acrobat, Photoshop</li>
+                        <li>SVG images</li>
+                        <li>server-side (Node.js)</li>
+                        <li>NoSQL databases (CouchDB)</li>
+                        <li>etc..</li>
+                    </ul></li>
             </ul>
             <aside class="notes">
                 <ul>
@@ -124,7 +126,7 @@
                         <li>standard built-in objects, and methods</li>
                     </ul>
                 </li>
-                <li class="fragment">syntax is based on C/JAVA - differences
+                <li class="fragment">syntax is based on C/C++/JAVA - differences
                     <ul>
                         <li>no classes (ehm.. ES6)</li>
                         <li>object prototype</li>
@@ -138,8 +140,24 @@
         </section>
 
         <section>
-            <h2>Types</h2>
+            <h2>Very important note</h2>
+            <p>JavaScript:</p>
             <ul>
+                <li class="fragment">functional</li>
+                <li class="fragment">prototypical</li>
+            </ul>
+
+            <aside class="notes">
+                one of the most important slides..
+            </aside>
+        </section>
+
+        <section>
+            <h2>Types</h2>
+            <span class="fragment fade-out">
+                <img src="img/gopher.jpg" alt="" style="width:75%; height: 75%; position: absolute;">
+            </span>
+            <ul class="fragment">
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" title="The Number JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the Number() constructor."><code>Number</code></a></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" title="The String global object is a constructor for strings, or a sequence of characters."><code>String</code></a></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="The Boolean object is an object wrapper for a boolean value."><code>Boolean</code></a></li>
@@ -158,8 +176,25 @@
 
             <aside class="notes">
                 oh, and undefined and null, which are ... slightly odd. And Array, which is a special kind of object. And Date and RegExp, which are objects that you get for free. And to be technically accurate, functions are just a special type of object.
-                And there are some built-in Error types as well.
+                And there are some built-in Error types as well. <br/>
+                var sym = Symbol("foo");
+                typeof sym;     // "symbol"
+                var symObj = Object(sym);
+                typeof symObj;  // "object"
             </aside>
+        </section>
+
+        <section>
+            <h2>Comparison</h2>
+            <h4>== VS ===</h4>
+            <ul>
+                <li>==<br>not aware of type</li>
+                <li>===<br>aware of types</li>
+            </ul>
+            <p class="fragment">in general: == is bad</p>
+
+            <aside class="notes">misconception: no types
+                basically == makes type conversions as well :(</aside>
         </section>
 
         <section>
@@ -184,8 +219,8 @@
             <p>Single characters by strings as well (<code>"a"</code>)</p>
             <p class="fragment"><code>"hello".length; // 5</code></p>
             <p class="fragment">Strings have methods as well</p>
-            <p class="fagment"><code>"hello".charAt(0); // "h"</code></p>
-            <p class="fagment"><code>"hello".toUpperCase(); // "HELLO"</code></p>
+            <p class="fragment"><code>"hello".charAt(0); // "h"</code></p>
+            <p class="fragment"><code>"hello".toUpperCase(); // "HELLO"</code></p>
 
             <aside class="notes">
                 More accurately, they are sequences of UTF-16 code units; each code unit is represented by a 16-bit number.
@@ -221,9 +256,9 @@
                     </ul>
                 </li>
                 <li class="fragment">truthy values
-                <ul>
-                    <li class="fragment">all other values</li>
-                </ul></li>
+                    <ul>
+                        <li class="fragment">all other values</li>
+                    </ul></li>
             </ul>
         </section>
 
@@ -231,8 +266,8 @@
             <h2>Variables</h2>
             <p>new variables with the <code>var</code> keyword</p>
             <pre><code class="js">var a;
-var name = "adam";
-                </code></pre>
+                var name = "adam";
+            </code></pre>
             <p class="fragment">if you declare a variable without assigning any value to it, its type is <code>undefined</code></p>
             <p class="fragment">no block scopes <span class="fragment">(..ES6?)</span></p>
         </section>
@@ -241,9 +276,9 @@ var name = "adam";
             <h2>Hoisting</h2>
             <p>in JS a variable can be declared after it's been used</p>
             <pre class="fragment"><code class="js">x = 5; // Assign 5 to x
-elem = document.getElementById("demo"); // Find an element
-elem.innerHTML = x;                     // Display x in the element, which is 5
-var x; // Declare x
+                elem = document.getElementById("demo"); // Find an element
+                elem.innerHTML = x;                     // Display x in the element, which is 5
+                var x; // Declare x
             </code></pre>
             <p class="fragment">moving all declarations to the top of the current scope </p>
             <p class="fragment">(to the top of the current script or the current function)</p>
@@ -254,17 +289,17 @@ var x; // Declare x
             <p class="fragment">like HashMaps in Java</p>
             <p class="fragment">key-value pairs</p>
             <pre class="fragment"><code class="js">var obj = new Object();
-var obj = {}; //preferred
-var obj = {
-    name: "Carrot",
-    "for": "Adam",
-    details: {
-        color: "orange",
-        size: 12
-    }
-};
-obj.details.color; // orange
-obj["details"]["size"]; // 12</code></pre>
+                var obj = {}; //preferred
+                var obj = {
+                name: "Carrot",
+                "for": "Adam",
+                details: {
+                color: "orange",
+                size: 12
+                }
+                };
+                obj.details.color; // orange
+                obj["details"]["size"]; // 12</code></pre>
         </section>
 
         <section>
@@ -273,35 +308,35 @@ obj["details"]["size"]; // 12</code></pre>
             <p class="fragment">like regular objects, with a magic property</p>
             <p class="fragment"><code>length</code></p>
             <pre class="fragment"><code class="js">var a = ["dog", "cat", "hen"];
-a.length; // 3
-["dog", "cat", "mouse"].forEach(function(currentValue, index, array) {
-    // Do something with currentValue or array[index]
-});</code></pre>
+                a.length; // 3
+                ["dog", "cat", "mouse"].forEach(function(currentValue, index, array) {
+                // Do something with currentValue or array[index]
+                });</code></pre>
         </section>
 
         <section>
             <h2>Functions</h2>
             <pre><code class="js">function add(x, y) {
-    var total = x + y;
-    return total;
-}
-add.variable = 'a variable'; //valid</code></pre>
+                var total = x + y;
+                return total;
+                }
+                add.variable = 'a variable'; //valid</code></pre>
             <p><pre><code class="js">function add() {
-var sum = 0;
-for (var i = 0, j = arguments.length; i < j; i++) {
-        sum += arguments[i];
-    }
-    return sum;
-}
+            var sum = 0;
+            for (var i = 0, j = arguments.length; i < j; i++) {
+            sum += arguments[i];
+            }
+            return sum;
+            }
 
-add(2, 3, 4, 5); // 14</code></pre></p>
+            add(2, 3, 4, 5); // 14</code></pre></p>
             <p><pre><code class="js">var avg = function() {
-    var sum = 0;
-    for (var i = 0, j = arguments.length; i < j; i++) {
-        sum += arguments[i];
-    }
-    return sum / arguments.length;
-};</code></pre></p>
+            var sum = 0;
+            for (var i = 0, j = arguments.length; i < j; i++) {
+            sum += arguments[i];
+            }
+            return sum / arguments.length;
+            };</code></pre></p>
         </section>
 
         <section>
@@ -325,51 +360,81 @@ add(2, 3, 4, 5); // 14</code></pre></p>
             <p class="fragment">these are local variables</p>
             <p class="fragment">- not reachable from the outside</p>
             <p><pre class="fragment"><code class="js">var myFunction = function() {
-    var myVariable = 'just a var';
-};
-//myVariable is undefined here</code></pre></p>
+            var myVariable = 'just a var';
+            };
+            //myVariable is undefined here</code></pre></p>
         </section>
 
         <section>
             <h2>IIFE and scopes</h2>
             <p>Immediately Invoked Function Expression</p>
             <pre class="fragment"><code class="js">var a = 1;
-var b = 2;
+                var b = 2;
 
-//IIFE
-(function() {
-    var b = 3;
-    a += b;
-})();
+                //IIFE
+                (function() {
+                var b = 3;
+                a += b;
+                })();
 
-a; // 4
-b; // 2</code></pre>
+                a; // 4
+                b; // 2</code></pre>
         </section>
 
         <section>
             <h2>Module pattern</h2>
             <p>"private" and "public" variables</p>
             <pre><code class="js">var module = (function module() {
-    var privateVar = 1;
-    var publicVar = 10;
+                var privateVar = 1;
+                var publicVar = 10;
 
-    function privateFunc() {
-        console.log('privateFunc');
-        privateVar++;
-        publicVar++;
-        return privateVar * 2;
-    }
+                function privateFunc() {
+                console.log('privateFunc');
+                privateVar++;
+                publicVar++;
+                return privateVar * 2;
+                }
 
-    function publicFunc() {
-        console.log('publicFunc');
-        privateFunc();
-    }
+                function publicFunc() {
+                console.log('publicFunc');
+                privateFunc();
+                }
 
-    return {
-        publicVar: publicVar,
-        publicFunc: publicFunc
-    };
-})();</code></pre>
+                return {
+                publicVar: publicVar,
+                publicFunc: publicFunc
+                };
+                })();</code></pre>
+        </section>
+
+        <section>
+            <h2><code>this</code> in JS</h2>
+            <ul>
+                <li>by default it's referencing to it's scope
+                <pre><code class="js">var obj = {
+                    x: 81,
+                    getX: function() {
+                    console.log(this.x);
+                    return this.x;
+                    }
+                    };
+                    obj.getX(); //81
+                </code></pre></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>bind, call, apply</h2>
+            <p>But we can change the reference of <code>this</code>!</p>
+            <pre class="fragment"><code class="js">var otherObj = {
+                x: 99
+                };
+                obj.getX.call(otherObj); //99
+                obj.getX.apply(otherObj); //99
+                var myGetXFunction = obj.getX.bind(otherObj); //returns a function
+                myGetXFunction(); //99</code></pre>
+            <p class="fragment">more on this topic on my blog here: <a href="http://nagyadam2092.blogspot.hu/2015/02/javascript-difference-between-bind-vs.html">http://nagyadam2092.blogspot.hu/2015/02/javascript-difference-between-bind-vs.html</a></p>
+            <aside class="notes">The only difference between call and apply is apply lets you invoke the function with arguments as an array; call requires the parameters be listed explicitly.</aside>
         </section>
 
         <section>
@@ -381,72 +446,100 @@ b; // 2</code></pre>
         <section>
             <h2>Functional inheritance</h2>
             <pre><code class="js">//class Animal
-var Animal = function(_feet) {
-    this.feet = _feet;
-};
-Animal.prototype.eat = function() {
-    console.log("I am eating, omnomnom..");
-};
-Animal.prototype.info = function() {
-    console.log("I have this amount of feet: " + this.feet);
-};
+                var Animal = function(_feet) {
+                this.feet = _feet;
+                };
+                Animal.prototype.eat = function() {
+                console.log("I am eating, omnomnom..");
+                };
+                Animal.prototype.info = function() {
+                console.log("I have this amount of feet: " + this.feet);
+                };
 
-//class Cat extends Animal
-var Cat = function(_feet, _miceHaveEaten) {
-    Animal.call(this, _feet);
-    this.miceHaveEaten = _miceHaveEaten;
-    var privateVariable = "This is not available outside the class!";
-};
-Cat.prototype = new Animal();
-Cat.prototype.purr = function() {
-    console.log("Purrrrrr.........");
-};
-//polymorphism
-Cat.prototype.info = function() {
-    console.log("I have eaten this amount of mice so far: " + this.miceHaveEaten + ", also I have " + this.feet + " feet.");
-};
+                //class Cat extends Animal
+                var Cat = function(_feet, _miceHaveEaten) {
+                Animal.call(this, _feet);
+                this.miceHaveEaten = _miceHaveEaten;
+                var privateVariable = "This is not available outside the class!";
+                };
+                Cat.prototype = new Animal();
+                Cat.prototype.purr = function() {
+                console.log("Purrrrrr.........");
+                };
+                //polymorphism
+                Cat.prototype.info = function() {
+                console.log("I have eaten this amount of mice so far: " + this.miceHaveEaten + ", also I have " + this.feet + " feet.");
+                };
 
-var unicellular = new Animal(0);
-unicellular.eat();
-unicellular.info();
+                var unicellular = new Animal(0);
+                unicellular.eat();
+                unicellular.info();
 
-var garfield = new Cat(4, 9001);
-garfield.eat();
-garfield.purr();
-garfield.info();</code></pre>
+                var garfield = new Cat(4, 9001);
+                garfield.eat();
+                garfield.purr();
+                garfield.info();</code></pre>
+            <p class="fragment"><a href="http://nagyadam2092.blogspot.hu/2015/03/oop-in-javascript.html">more here</a></p>
         </section>
 
         <section>
             <h2>Let's override String!</h2>
-            <pre><code class="js">var s = "Adam";
-s.reversed(); // TypeError on line 1: s.reversed is not a function
+            <pre class="fragment"><code class="js">var s = "Adam";
+                s.reversed(); // TypeError on line 1: s.reversed is not a function
 
-String.prototype.reversed = function reversed() {
-    var r = "";
-    for (var i = this.length - 1; i >= 0; i--) {
-        r += this[i];
-    }
-    return r;
-};
+                String.prototype.reversed = function reversed() {
+                var r = "";
+                for (var i = this.length - 1; i >= 0; i--) {
+                r += this[i];
+                }
+                return r;
+                };
 
-s.reversed(); // madA
+                s.reversed(); // madA
 
-"This can now be reversed".reversed(); // desrever eb won nac sihT</code></pre>
+                "This can now be reversed".reversed(); // desrever eb won nac sihT</code></pre>
         </section>
 
         <section>
             <h2>Closures</h2>
             <pre><code class="js">function makeAdder(a) {
-    return function(b) {
-        return a + b;
-    };
-}
-var fiveAdder = makeAdder(5);
-var twentyAdder = makeAdder(20);
-fiveAdder(6); // ?
-twentyAdder(7); // ?</code></pre>
+                return function(b) {
+                return a + b;
+                };
+                }
+                var fiveAdder = makeAdder(5);
+                var twentyAdder = makeAdder(20);
+                fiveAdder(6); // ?
+                twentyAdder(7); // ?</code></pre>
 
             <aside class="notes">A closure is the combination of a function and the scope object in which it was created. Closures let you save state — as such, they can often be used in place of objects</aside>
+        </section>
+
+        <section>
+            <h2>Problems</h2>
+            <ol>
+                <li class="fragment">Create a function (<code>add</code>) which adds two numbers</li>
+                <li class="fragment">Create a function (<code>caller</code>), which will call it's first argument (function) on the 2nd and 3rd argument: <code>caller(add, 2, 3);</code></li>
+                <li class="fragment">Create a function: <code class="js">add(2)(3); //5</code></li>
+                <li class="fragment">Create a function (<code>mul</code>) which multiplies two numbers</li>
+                <li class="fragment">same, but <code>mul(2)(3); //6</code></li>
+                <li class="fragment">Create a function which works like the following: <code>applyf(add)(2)(3); //5</code><br><code>applyf(mul)(2)(3); //6</code></li>
+            </ol>
+
+            <aside class="notes">
+                function add(x) {
+                return function(y) {
+                return x + y;
+                }
+                }
+                function applyf(cb) {
+                return function(x) {
+                return function(y) {
+                return cb(x)(y);
+                }
+                }
+                }
+            </aside>
         </section>
 
     </div>
