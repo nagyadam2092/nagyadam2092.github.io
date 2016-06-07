@@ -62,6 +62,8 @@
         <section>
             <p>You can find this presentation here:</p>
             <p><a href="https://github.com/nagyadam2092/AngularJS-presentation-Frankfurt">https://github.com/nagyadam2092/AngularJS-presentation-Frankfurt</a></p>
+            <p>or here:</p>
+            <p><a href="http://nagyadam2092.github.io/work/angularjs_presentation/angular_basics/#/">http://nagyadam2092.github.io/work/angularjs_presentation/angular_basics/#/</a></p>
         </section>
 
         <section>
@@ -73,6 +75,25 @@
                 The resulting environment is extraordinarily expressive, readable, and quick to develop.&rdquo;
             </blockquote>
             <p><a href="https://angularjs.org/">https://angularjs.org/</a></p>
+        </section>
+
+        <section>
+            <h2>History</h2>
+            <ul>
+                <li>2009 - Misko Hevery</li>
+                <li>originally for designers</li>
+                <li>Angular2 - still in RC (2016-06)</li>
+            </ul>
+
+            <aside class="notes">
+                Misko Hevery - getangular.com <br>
+                lot of people don't know about it, but originally it was created for designers to create prototypes fast
+            </aside>
+        </section>
+
+        <section>
+            <h2>Motivation</h2>
+            <p data-height="265" data-theme-id="0" data-slug-hash="LNPVBX" data-default-tab="js,result" data-user="nagyadam2092" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nagyadam2092/pen/LNPVBX/">Angular minimalistic minesweeper</a> by Adam Nagy (<a href="http://codepen.io/nagyadam2092">@nagyadam2092</a>) on <a href="http://codepen.io">CodePen</a>.</p>
         </section>
 
         <!--<section>-->
@@ -686,7 +707,29 @@
 
             <section>
                 <h2>require</h2>
-                <p>to require other directives</p>
+                <p>to require controllers of other directives</p>
+
+                <aside class="notes">
+                    Best Practice: use controller when you want to expose an API to other directives. Otherwise use link.
+                    <pre><code class="js">angular.module('docsTabsExample', [])
+                        .directive('myPane', function() {
+                        return {
+                        require: ['^^myTabs', 'ngModel'],
+                        restrict: 'E',
+                        transclude: true,
+                        scope: {
+                        title: '@'
+                        },
+                        link: function(scope, element, attrs, controllers) {
+                        var tabsCtrl = controllers[0],
+                        modelCtrl = controllers[1];
+
+                        tabsCtrl.addPane(scope);
+                        },
+                        templateUrl: 'my-pane.html'
+                        };
+                        });</code></pre>
+                </aside>
             </section>
 
         </section>
@@ -826,6 +869,126 @@
             </aside>
         </section>
 
+        <section>
+            <h2>Folder structure - <u>bad way</u></h2>
+            <pre><code>app/
+                ----- controllers/
+                ---------- mainController.js
+                ---------- otherController.js
+                ----- directives/
+                ---------- mainDirective.js
+                ---------- otherDirective.js
+                ----- services/
+                ---------- userService.js
+                ---------- itemService.js
+                ----- js/
+                ---------- bootstrap.js
+                ---------- jquery.js
+                ----- app.js
+                views/
+                ----- mainView.html
+                ----- otherView.html
+                ----- index.html</code></pre>
+
+        </section>
+
+        <section>
+            <h2>Folder structure - best practice</h2>
+            <pre><code>app/
+                ----- shared/   // acts as reusable components or partials of our site
+                ---------- sidebar/
+                --------------- sidebarDirective.js
+                --------------- sidebarView.html
+                ---------- article/
+                --------------- articleDirective.js
+                --------------- articleView.html
+                ----- components/   // each component is treated as a mini Angular app
+                ---------- home/
+                --------------- homeController.js
+                --------------- homeService.js
+                --------------- homeView.html
+                ---------- blog/
+                --------------- blogController.js
+                --------------- blogService.js
+                --------------- blogView.html
+                ----- app.module.js
+                ----- app.routes.js
+                assets/
+                ----- img/      // Images and icons for your app
+                ----- css/      // All styles and style related files (SCSS or LESS files)
+                ----- js/       // JavaScript files written for your app that are not for angular
+                ----- libs/     // Third-party libraries such as jQuery, Moment, Underscore, etc.
+                index.html
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Minification</h2>
+            <ul>
+                <li class="fragment">to make the network dataflow as less as possible</li>
+                <li class="fragment">only in production!</li>
+            </ul>
+
+            <aside class="notes">basically text modification with an compiler (AST, etc..)</aside>
+        </section>
+
+        <section>
+            <h2>Bad practice</h2>
+            <img src="img/components_bad.png" alt="" style="width: 75%; height: 75%;"><br>
+            Credit: <a href="https://github.com/emartech/journey-towards-angular-2-presentation">Emarsys</a>
+        </section>
+
+        <section>
+            <h2>Best practice</h2>
+            <h4>uni-directional data-flow</h4>
+            <img src="img/components_flow.png" alt="" style="width: 75%; height: 75%;"><br>
+            Credit: <a href="https://github.com/emartech/journey-towards-angular-2-presentation">Emarsys</a>
+
+            <aside class="notes">
+                <ul>
+                    <li>1.5></li>
+                    <li>">" and "&"</li>
+                    <li>no "=" !!!</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section>
+            <h2>Documentation</h2>
+            <p><a href="http://usejsdoc.org/">JSDoc</a></p>
+            <pre><code class="js">    /**
+                * MyDirective directive
+                *
+                * @memberof MyModule
+                * @ngdoc directive
+                * @name MyDirective
+                */</code></pre>
+
+            <aside class="notes">
+                like JAVADoc
+            </aside>
+        </section>
+
+        <section>
+            <h2>Linting</h2>
+            <p class="fragment">Linting is a process where our source code will be analyzed</p>
+            <p class="fragment">set of (custom) rules</p>
+            <p class="fragment">recommended to use</p>
+        </section>
+
+        <section>
+            <h2>SASS</h2>
+            <p class="fragment">slight off-topic</p>
+            <p class="fragment">to make development in CSS easier</p>
+            <p class="fragment">set of extensions to the original css rules</p>
+        </section>
+
+        <section>
+            <h2>Mock-server</h2>
+            <p class="fragment">to be able to test your application without changing the original environment</p>
+            <p class="fragment">great example: <a href="https://github.com/tombenke/rest-tool">https://github.com/tombenke/rest-tool</a></p>
+        </section>
+
         <!--<section>
             <h2>Demystifying Angular - how the view works</h2>
         </section>-->
@@ -841,6 +1004,11 @@
                 <li>...</li>
             </ul>
         </section>
+
+        <!--<section>-->
+        <!--<h2>Folder structure</h2>-->
+        <!--TODO-->
+        <!--</section>-->
 
         <section>
             <h2>Homework</h2>
