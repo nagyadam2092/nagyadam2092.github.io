@@ -4,3 +4,7 @@
 	display: inline;
 }
 
+div.jumbotron .col-md-4.hidden-sm.hidden-xs  img {
+	width: 100%;
+	height: 100%;
+}
