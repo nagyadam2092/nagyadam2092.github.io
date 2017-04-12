@@ -27,7 +27,6 @@ $(document).ready(function(){
 				post.brand = "http://wiki.ivsa.org/images/d/d5/Blogger_logo.png";
 				posts.push(post);
 			});
-			console.log(posts);
 			shuffle(posts);
 			$posts.append('<h2 class="col-md-12">Some of my articles and repos</h2>');
 			posts.forEach(function(post){

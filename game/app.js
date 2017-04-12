@@ -3,13 +3,13 @@ var Game = (function Game(){
 
 	var PhaserGame = function (game) {
 		this.adam = null;
-	    this.background = null;
-	    this.bug = null;
-	    this.bulletTry = null;
-	    this.bulletCatch = null;
+		this.background = null;
+		this.bug = null;
+		this.bulletTry = null;
+		this.bulletCatch = null;
 
-	    this.player = null;
-	    this.bullets = null;
+		this.player = null;
+		this.bullets = null;
 
 		this.cursors= null;
 		this.fireButton= null;
@@ -67,8 +67,6 @@ var Game = (function Game(){
 		    this.enemies.children.forEach(function(bug){
 		    	bug.events.onOutOfBounds = this.enemyOutOfBound;
 		    });
-
-		    console.log(this.enemies);
 
 		    this.player = game.add.sprite(400, 150, 'adam');
 		    this.game.physics.arcade.enable(this.player);
