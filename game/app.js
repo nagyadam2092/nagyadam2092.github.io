@@ -72,7 +72,7 @@ var Game = (function Game(){
 		    this.game.physics.arcade.enable(this.player);
 		    this.player.body.collideWorldBounds = true;
 
-		    this.cursors = game.input.keyboard.createCursorKeys();
+		    this.cursors = game.input.keyboard.addKeys({ 'left': Phaser.Keyboard.LEFT, 'right': Phaser.Keyboard.RIGHT });
 		    this.fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
 		    this.scoreText = this.add.text(23, 24, 'Score: 0', { font: "18px Arial"});
