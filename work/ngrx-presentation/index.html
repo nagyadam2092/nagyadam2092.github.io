@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8000/ -->
+<html class=" js no-mobile desktop no-ie chrome chrome70 root-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions no-touch retina fontface domloaded w-1440 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 gt-1280 lt-1680 lt-1920 no-portrait landscape" id="index-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="./index_files/reveal.css">
+		<link rel="stylesheet" href="./index_files/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="./index_files/zenburn.css">
+
+		<!-- blink -->
+		<style>
+		.blink {
+			animation: blink 0.5s step-end infinite;
+		}
+
+		@keyframes blink {
+			67% {
+				opacity: 0
+			}
+		}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script><link rel="stylesheet" type="text/css" href="./index_files/paper.css"><script type="text/javascript" src="./index_files/marked.js"></script><script type="text/javascript" src="./index_files/markdown.js"></script><script type="text/javascript" src="./index_files/notes.js"></script><script type="text/javascript" src="./index_files/highlight.js"></script>
+	</head>
+	<body>
+		<div class="reveal convex center has-vertical-slides has-horizontal-slides ready" role="application" data-transition-speed="slow" data-background-transition="fade">
+			<div class="slides" style="width: 960px; height: 700px; zoom: 1.05874;">
+				<section data-background="https://media.giphy.com/media/Z1kpfgtHmpWHS/giphy.gif" data-background-image="https://media.giphy.com/media/Z1kpfgtHmpWHS/giphy.gif" class="past" style="top: 330px; display: none;" hidden="" aria-hidden="true"></section>
+				<!-- <section data-background="https://media.giphy.com/media/11fucLQCTOdvBS/giphy.gif"></section> -->
+				<section class="past" style="top: 269.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>Angular + Redux Debugging</h2>
+				</section>
+				<!-- <section>
+					<h3>Redux</h3>
+				</section> -->
+				<!-- <section data-background="https://media.giphy.com/media/qUDEUuKpPLSBq/giphy.gif"> -->
+				<!-- <section data-background="https://media.giphy.com/media/wHXaBTGxHz7ig/giphy.gif"> -->
+				
+				<section class="past" style="top: 218px; display: none;" hidden="" aria-hidden="true">
+					<h2>Redux</h2>
+					<ul>
+						<li class="fragment visible" data-fragment-index="0">Sounds like a cool new technology</li>
+						<li class="fragment visible" data-fragment-index="1">It's more of a convention</li>
+					</ul>
+				</section>
+				<section class="past" style="top: 229.5px; display: none;" hidden="" aria-hidden="true">
+					<h1 class="blink">TRIVIA TIME !!!</h1>
+				</section>
+				<section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="" aria-hidden="true">
+					<section style="top: 218.5px; display: none;" class="" aria-hidden="true">
+						<h2>Where does the name "Redux" come from?</h2>
+						<audio data-autoplay="" src="30seconds.mp3" loop="" data-paused-by-reveal=""></audio>
+					</section>
+					<section class="future" aria-hidden="true" style="top: 125px; display: none;" hidden="">
+						<audio data-autoplay="" src="30seconds.mp3" loop=""></audio>
+						<blockquote cite="./index_files/Redux_(JavaScript_library)">“I was thinking about Flux as a reduce operation over time... your stores, they accumulate state in response to these actions. I was thinking of taking this further. What if your Flux store was not a store but a reducer function?”<br>- Dan Abramov</blockquote>
+					</section>
+				</section>
+				<section class="past" style="top: 140.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>Answer</h2>
+					<ul>
+						<li class="fragment visible" data-fragment-index="0">Redux = (Red)ucer + Fl(ux)</li>
+						<li class="fragment visible" data-fragment-index="1">Reducer reduces (state, action) into state - like Array.prototype.reduce()﻿</li>
+						<li class="fragment visible" data-fragment-index="2">Flux: architectural pattern</li>
+						<li class="fragment visible" data-fragment-index="3"><a href="https://www.youtube.com/watch?v=xsSnOQynTHs">Dan Abramov presents time traveling 💥💥💥</a></li>
+					</ul>
+				</section>
+				<section data-background="https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png" data-background-image="https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png" class="past" style="top: 330px; display: none;" hidden="" aria-hidden="true"></section>
+				<section class="past" style="top: 125px; display: none;" hidden="" aria-hidden="true">
+					<blockquote cite="./index_files/Redux_(JavaScript_library)">“I was thinking about Flux as a reduce operation over time... your stores, they accumulate state in response to these actions. I was thinking of taking this further. What if your Flux store was not a store but a reducer function?”<br>- Dan Abramov</blockquote>
+				</section>
+				<section class="past" style="top: 269px; display: none;" hidden="" aria-hidden="true">
+					<h2>What problem tries to solve redux?</h2>
+				</section>
+				<section data-background="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif" data-background-image="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif" class="past" style="top: 330px; display: none;" hidden="" aria-hidden="true"></section>
+				<section class="past" style="top: 114.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>What problem tries to solve Redux?</h2>
+					<ul>
+						<li class="fragment visible" data-fragment-index="0">(arguably) UI usually has more state than the backend</li>
+						<li class="fragment visible" data-fragment-index="1">buttons, forms, inputs on a SPA</li>
+						<li class="fragment visible" data-fragment-index="2">component interactions (child to parent prop, parent to child func)</li>
+						<li class="fragment visible" data-fragment-index="3">unidirectional data flow</li>
+					</ul>
+				</section>
+				<section class="past" style="top: 51.5px; display: none;" hidden="" aria-hidden="true">
+					<img src="./index_files/image-2.png" alt="">
+				</section>
+				<!-- <section data-background="https://media.giphy.com/media/z9sFrQMfEME5a/giphy.gif"></section> -->
+				<section class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true">
+					<a href="https://gist.github.com/conorhastings/ba8a06ce061466ac3fe7" target="_blank">https://gist.github.com/conorhastings/ba8a06ce061466ac3fe7</a>
+					<script src="./index_files/ba8a06ce061466ac3fe7.js"></script><link rel="stylesheet" href="./index_files/gist-embed-c25e2efde9da332f6cd59ef5c647a379.css"><div id="gist28015284" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-simple-redux-js" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-javascript ">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-simple-redux-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-simple-redux-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">/*</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-simple-redux-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c">* The reason for this is just a thought exercise</span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-simple-redux-js-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c">* often people(myself super included) are so confused</span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-simple-redux-js-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c">* when trying something new, but breaking it down</span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-simple-redux-js-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c">* to it's simplest existence can be the best way to understand</span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-simple-redux-js-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">*/</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-simple-redux-js-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-k">function</span> <span class="pl-en">createStore</span>(<span class="pl-smi">reducer</span>, <span class="pl-smi">initState</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-simple-redux-js-LC8" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">let</span> state <span class="pl-k">=</span> initState;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-simple-redux-js-LC9" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">let</span> subscribers <span class="pl-k">=</span> [];</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-simple-redux-js-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-simple-redux-js-LC11" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">const</span> <span class="pl-c1">getState</span> <span class="pl-k">=</span> () <span class="pl-k">=&gt;</span> state;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-simple-redux-js-LC12" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">const</span> <span class="pl-c1">dispatch</span> <span class="pl-k">=</span> <span class="pl-smi">action</span> <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-simple-redux-js-LC13" class="blob-code blob-code-inner js-file-line">		state <span class="pl-k">=</span> <span class="pl-en">reducer</span>(state, action);</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-simple-redux-js-LC14" class="blob-code blob-code-inner js-file-line">		<span class="pl-smi">subscribers</span>.<span class="pl-c1">forEach</span>((<span class="pl-smi">subscriber</span>) <span class="pl-k">=&gt;</span> <span class="pl-en">subscriber</span>());</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-simple-redux-js-LC15" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> action;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-simple-redux-js-LC16" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-simple-redux-js-LC17" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">const</span> <span class="pl-c1">subscribe</span> <span class="pl-k">=</span> (<span class="pl-smi">listener</span>) <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-simple-redux-js-LC18" class="blob-code blob-code-inner js-file-line">		<span class="pl-smi">subscribers</span>.<span class="pl-c1">push</span>(listener);</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-simple-redux-js-LC19" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">return</span> () <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-simple-redux-js-LC20" class="blob-code blob-code-inner js-file-line">			subscribers <span class="pl-k">=</span> <span class="pl-smi">subscribers</span>.<span class="pl-c1">slice</span>(<span class="pl-smi">subscribers</span>.<span class="pl-c1">indexOf</span>(listener) <span class="pl-k">+</span> <span class="pl-c1">1</span>, <span class="pl-c1">1</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-simple-redux-js-LC21" class="blob-code blob-code-inner js-file-line">		};</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-simple-redux-js-LC22" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-simple-redux-js-LC23" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-simple-redux-js-LC24" class="blob-code blob-code-inner js-file-line">		dispatch,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-simple-redux-js-LC25" class="blob-code blob-code-inner js-file-line">		subscribe,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-simple-redux-js-LC26" class="blob-code blob-code-inner js-file-line">		getState</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-simple-redux-js-LC27" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-simple-redux-js-LC28" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-simple-redux-js-LC29" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-simple-redux-js-LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">initState</span> <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-simple-redux-js-LC31" class="blob-code blob-code-inner js-file-line">	name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Conor<span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-simple-redux-js-LC32" class="blob-code blob-code-inner js-file-line">	redux<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>awesome<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-simple-redux-js-LC33" class="blob-code blob-code-inner js-file-line">};</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-simple-redux-js-LC34" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">myReducer</span> <span class="pl-k">=</span> (<span class="pl-smi">state</span>, <span class="pl-smi">action</span>) <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-simple-redux-js-LC35" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">let</span> newState <span class="pl-k">=</span> <span class="pl-c1">Object</span>.<span class="pl-en">assign</span>({}, state);</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-simple-redux-js-LC36" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">switch</span> (<span class="pl-smi">action</span>.<span class="pl-c1">type</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-simple-redux-js-LC37" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>CHANGE_NAME<span class="pl-pds">"</span></span>:</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-simple-redux-js-LC38" class="blob-code blob-code-inner js-file-line">			<span class="pl-smi">newState</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-smi">action</span>.<span class="pl-c1">name</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-simple-redux-js-LC39" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">break</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-simple-redux-js-LC40" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>CHANGE_REDUX_ADJECTIVE<span class="pl-pds">"</span></span>:</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-simple-redux-js-LC41" class="blob-code blob-code-inner js-file-line">			<span class="pl-smi">newState</span>.<span class="pl-smi">redux</span> <span class="pl-k">=</span> <span class="pl-smi">action</span>.<span class="pl-smi">adjective</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-simple-redux-js-LC42" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">break</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-simple-redux-js-LC43" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">default</span>: </td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-simple-redux-js-LC44" class="blob-code blob-code-inner js-file-line">			<span class="pl-c"><span class="pl-c">//</span>do nothing</span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-simple-redux-js-LC45" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-simple-redux-js-LC46" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> newState</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-simple-redux-js-LC47" class="blob-code blob-code-inner js-file-line">};</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-simple-redux-js-LC48" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-simple-redux-js-LC49" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">store</span> <span class="pl-k">=</span> <span class="pl-en">createStore</span>(myReducer, initState);</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-simple-redux-js-LC50" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-simple-redux-js-LC51" class="blob-code blob-code-inner js-file-line"><span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">store</span>.<span class="pl-en">getState</span>(), <span class="pl-s"><span class="pl-pds">"</span>initial state<span class="pl-pds">"</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-simple-redux-js-LC52" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-simple-redux-js-LC53" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">subscriber</span> <span class="pl-k">=</span> <span class="pl-smi">store</span>.<span class="pl-en">subscribe</span>(() <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-simple-redux-js-LC54" class="blob-code blob-code-inner js-file-line">	<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>i'll console state changes twice then unsubscribe so you will not be notified of the third dispatch<span class="pl-pds">"</span></span>, <span class="pl-smi">store</span>.<span class="pl-en">getState</span>());</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-simple-redux-js-LC55" class="blob-code blob-code-inner js-file-line">});</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-simple-redux-js-LC56" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-simple-redux-js-LC57" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">store</span>.<span class="pl-en">dispatch</span>({</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-simple-redux-js-LC58" class="blob-code blob-code-inner js-file-line">	type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>CHANGE_NAME<span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-simple-redux-js-LC59" class="blob-code blob-code-inner js-file-line">	name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Conor Hastings<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-simple-redux-js-LC60" class="blob-code blob-code-inner js-file-line">});</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-simple-redux-js-LC61" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-simple-redux-js-LC62" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">store</span>.<span class="pl-en">dispatch</span>({</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-simple-redux-js-LC63" class="blob-code blob-code-inner js-file-line">	type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>CHANGE_REDUX_ADJECTIVE<span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-simple-redux-js-LC64" class="blob-code blob-code-inner js-file-line">	adjective<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>great<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-simple-redux-js-LC65" class="blob-code blob-code-inner js-file-line">});</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-simple-redux-js-LC66" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="file-simple-redux-js-LC67" class="blob-code blob-code-inner js-file-line"><span class="pl-en">subscriber</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="file-simple-redux-js-LC68" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="file-simple-redux-js-LC69" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">store</span>.<span class="pl-en">dispatch</span>({</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="file-simple-redux-js-LC70" class="blob-code blob-code-inner js-file-line">	type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>CHANGE_NAME<span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td id="file-simple-redux-js-LC71" class="blob-code blob-code-inner js-file-line">	name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Conor Cool Guy<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td id="file-simple-redux-js-LC72" class="blob-code blob-code-inner js-file-line">});</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L73" class="blob-num js-line-number" data-line-number="73"></td>
+        <td id="file-simple-redux-js-LC73" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-redux-js-L74" class="blob-num js-line-number" data-line-number="74"></td>
+        <td id="file-simple-redux-js-LC74" class="blob-code blob-code-inner js-file-line"><span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>the state changed but since we unsubscribed the listener above was not notified o the final dispatch<span class="pl-pds">"</span></span>, <span class="pl-smi">store</span>.<span class="pl-en">getState</span>());</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/conorhastings/ba8a06ce061466ac3fe7/raw/0f757958f528be5f815c1323566f0e63f4405224/simple-redux.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/conorhastings/ba8a06ce061466ac3fe7#file-simple-redux-js">simple-redux.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+				</section>
+				<section class="past" style="top: 37.5px; display: none;" hidden="" aria-hidden="true">
+					<img src="./index_files/1_87dJ5EB3ydD7_AbhKb4UOQ.png" alt="">
+				</section>
+				<section class="past" style="top: 140.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>Redux Devtools</h2>
+					<ul>
+						<li class="fragment visible" data-fragment-index="0"><a href="http://extension.remotedev.io/">http://extension.remotedev.io/</a></li>
+						<li class="fragment visible" data-fragment-index="1">time traveling</li>
+						<li class="fragment visible" data-fragment-index="2">persist state on page reload</li>
+						<li class="fragment visible" data-fragment-index="3">skip (cancel) actions</li>
+						<li class="fragment visible" data-fragment-index="4">dispatch custom actions</li>
+					</ul>
+				</section>
+				<section class="past" style="top: 244px; display: none;" hidden="" aria-hidden="true">
+					<h2>DEMO TIME !</h2>
+					<a href="http://extension.remotedev.io/#demo">http://extension.remotedev.io/#demo</a>
+				</section>
+				<section class="past" style="top: 208px; display: none;" hidden="" aria-hidden="true">
+					<h2>NgRx</h2>
+					<p>RxJS powered state management for Angular applications, inspired by Redux</p>
+				</section>
+				<section class="past" style="top: 52.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>NgRx Effects</h2>
+					<img src="./index_files/1_vSadxKWVoAirhVCa8fxiNw.png" alt="">
+				</section>
+				<section data-background="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif" data-background-image="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif" class="past" style="top: 330px; display: none;" hidden="" aria-hidden="true"></section>
+				<section class="past" style="top: 37.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>NgRx Effects - our setup</h2>
+					<ul>
+						<li class="fragment visible" data-fragment-index="0">dispatch an action (`LOAD_FLOW`)</li>
+						<li class="fragment visible" data-fragment-index="1">an Effect listens to that action</li>
+						<li class="fragment visible" data-fragment-index="2">this effect calls a service (`this.shopService.getFlowByPageId`)</li>
+						<li class="fragment visible" data-fragment-index="3">with RxJS magic (operators) the effect listens to success/failure</li>
+						<li class="fragment visible" data-fragment-index="4">and shoots another action with data / error message (`(response: Flow) =&gt; new shopActions.LoadFlowSuccessAction(response)`)</li>
+					</ul>
+				</section>
+				<section class="past" style="top: 141.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>NgRx Effects - our setup #2</h2>
+					<ul>
+						<li class="fragment visible" data-fragment-index="0">components are listening to store changes</li>
+						<li class="fragment visible" data-fragment-index="1">via "selectors" (derived data)</li>
+<pre class="fragment visible" data-fragment-index="2"><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShopService</span> </span>{
+  flow$ = <span class="hljs-keyword">this</span>.store.pipe(select(getFlow));
+  <span class="hljs-comment">// ...</span>
+}</code></pre>
+					</ul>
+				</section>
+				<section class="past" style="top: 193px; display: none;" hidden="" aria-hidden="true">
+					<h2>NgRx Effects - our setup #3</h2>
+					<p class="fragment visible" data-fragment-index="0">in the template you can unwrap it by the "async" pipe</p>
+<pre class="fragment visible" data-fragment-index="1"><code class="hljs stylus">&lt;suite-shop-card-<span class="hljs-attribute">content</span> [flow]=<span class="hljs-string">"flow$ | async"</span>&gt;
+&lt;/suite-shop-card-<span class="hljs-attribute">content</span>&gt;</code></pre>
+
+				</section>
+				<section class="past" style="top: 166.5px; display: none;" hidden="" aria-hidden="true">
+					<h2>why is redux good for us?</h2>
+					<ul>
+						<li class="fragment visible" data-fragment-index="0">UI architecture</li>
+						<li class="fragment visible" data-fragment-index="1">does not need to know about it's surrounding</li>
+						<li class="fragment visible" data-fragment-index="2">!!TODO!!: don't forget to add something here about smart and dumb components</li>
+					</ul>
+				</section>
+
+
+
+
+				<section class="past" style="top: 223px; display: block;" hidden="" aria-hidden="true">
+					<h2>Possible follow ups</h2>
+					<h3>NgRx Entities</h3>
+				</section>
+
+				<section data-background="https://media.giphy.com/media/63iaRzJmiUoy4/giphy.gif" data-background-image="https://media.giphy.com/media/63iaRzJmiUoy4/giphy.gif" class="past" style="top: 329.5px; display: block;" hidden="" aria-hidden="true"></section>
+				<section data-background="https://media.giphy.com/media/KJ1f5iTl4Oo7u/source.gif" data-background-image="https://media.giphy.com/media/KJ1f5iTl4Oo7u/source.gif" class="present" style="top: 329.5px; display: block;"></section>
+
+
+
+			</div>
+		<div class="backgrounds"><div class="slide-background past" data-background-hash="https://media.giphy.com/media/Z1kpfgtHmpWHS/giphy.gifnullnullnullnullnullnullnullnullnull" data-loaded="true" style="display: none;"><div class="slide-background-content" style="background-image: url(&quot;https://media.giphy.com/media/Z1kpfgtHmpWHS/giphy.gif&quot;);"></div></div><div class="slide-background past" data-loaded="true" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background past" data-loaded="true" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background stack past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" data-background-hash="https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.pngnullnullnullnullnullnullnullnullnull" style="display: none;" data-loaded="true"><div class="slide-background-content" style="background-image: url(&quot;https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png&quot;);"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" data-background-hash="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gifnullnullnullnullnullnullnullnullnull" style="display: none;" data-loaded="true"><div class="slide-background-content" style="background-image: url(&quot;https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif&quot;);"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" data-background-hash="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gifnullnullnullnullnullnullnullnullnull" style="display: none;" data-loaded="true"><div class="slide-background-content" style="background-image: url(&quot;https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif&quot;);"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" data-background-hash="https://media.giphy.com/media/63iaRzJmiUoy4/giphy.gifnullnullnullnullnullnullnullnullnull" style="display: block;" data-loaded="true"><div class="slide-background-content" style="background-image: url(&quot;https://media.giphy.com/media/63iaRzJmiUoy4/giphy.gif&quot;);"></div></div><div class="slide-background present" data-background-hash="https://media.giphy.com/media/KJ1f5iTl4Oo7u/source.gifnullnullnullnullnullnullnullnullnull" style="display: block;" data-loaded="true"><div class="slide-background-content" style="background-image: url(&quot;https://media.giphy.com/media/KJ1f5iTl4Oo7u/source.gif&quot;);"></div></div></div><div class="progress" style="display: block;"><span style="width: 1440px;"></span></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"><div class="controls-arrow"></div></button><button class="navigate-right" aria-label="next slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="slide-number" style="display: block;"><a href="http://localhost:8000/#/25"><span class="slide-number-a">26</span></a></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);"></div></div>
+
+		<script src="./index_files/head.min.js"></script>
+		<script src="./index_files/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+				slideNumber: true,
+				transition: 'convex',
+				transitionSpeed: 'slow'
+			});
+		</script>
+	<script src="./index_files/livereload.js" async="" defer=""></script>
+
+
+
+<!--
+https://medium.com/beautiful-angular/angular-2-with-redux-using-NgRx-store-2f93a8ad0dd
+-->
+</body></html>

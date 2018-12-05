@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Redux (JavaScript library) - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Redux_(JavaScript_library)","wgTitle":"Redux (JavaScript library)","wgCurRevisionId":845110377,"wgRevisionId":845110377,"wgArticleId":53428852,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages using Infobox software with unknown parameters","JavaScript libraries"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Redux_(JavaScript_library)","wgRelevantArticleId":53428852,"wgRequestId":"XAVq1gpAMEwAABbexccAAACX","wgCSPNonce":false,"wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikiEditorEnabledModules":[],"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsShouldSendModuleToUser":true,"wgPopupsConflictsWithNavPopupGadget":false,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en","usePageImages":true,"usePageDescriptions":true},"wgMFExpandAllSectionsUserOption":true,"wgMFEnableFontChanger":true,"wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgWMESchemaEditAttemptStepOversample":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgWikibaseItemId":"Q28957057","wgScoreNoteLanguages":{"arabic":"العربية","catalan":"català","deutsch":"Deutsch","english":"English","espanol":"español","italiano":"italiano","nederlands":"Nederlands","norsk":"norsk","portugues":"português","suomi":"suomi","svenska":"svenska","vlaams":"West-Vlams"},"wgScoreDefaultNoteLanguage":"nederlands","wgCentralAuthMobileDomain":false,"wgCodeMirrorEnabled":true,"wgVisualEditorToolbarScrollOffset":0,"wgVisualEditorUnsupportedEditParams":["undo","undoafter","veswitched"],"wgEditSubmitButtonLabelPublish":true});mw.loader.state({"ext.gadget.charinsert-styles":"ready","ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready","user":"ready","user.options":"ready","user.tokens":"loading","ext.cite.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","ext.3d.styles":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.tokens@0tffind",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});RLPAGEMODULES=["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.compactlinks","ext.uls.interface","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"];mw.loader.load(RLPAGEMODULES);});</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.3d.styles%7Cext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.charinsert-styles&amp;only=styles&amp;skin=vector"/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.33.0-wmf.6"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Redux_(JavaScript_library)"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 9]><script src="/w/load.php?debug=false&amp;lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Redux_JavaScript_library rootpage-Redux_JavaScript_library skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="siteNotice" class="mw-body-content"><!-- CentralNotice --></div><div class="mw-indicators mw-body-content">
+</div>
+<h1 id="firstHeading" class="firstHeading" lang="en">Redux (JavaScript library)</h1>			<div id="bodyContent" class="mw-body-content">
+				<div id="siteSub" class="noprint">From Wikipedia, the free encyclopedia</div>				<div id="contentSub"></div>
+				<div id="jump-to-nav"></div>				<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+				<a class="mw-jump-link" href="#p-search">Jump to search</a>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><table class="infobox vevent" style="width:22em"><caption class="summary">Redux</caption><tbody><tr><td colspan="2" style="text-align:center"><a href="/wiki/File:Redux_Logo.png" class="image"><img alt="Redux Logo.png" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/30/Redux_Logo.png/220px-Redux_Logo.png" width="220" height="59" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/30/Redux_Logo.png/330px-Redux_Logo.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/30/Redux_Logo.png/440px-Redux_Logo.png 2x" data-file-width="2674" data-file-height="712" /></a></td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Software_developer" class="mw-redirect" title="Software developer">Original author(s)</a></th><td>Dan Abramov and Andrew Clark</td></tr><tr><th scope="row" style="white-space: nowrap;">Initial release</th><td>June&#160;2, 2015<span class="noprint">&#59;&#32;3 years ago</span><span style="display:none">&#160;(<span class="bday dtstart published updated">2015-06-02</span>)</span><sup id="cite_ref-githubreleasetag_1-0" class="reference"><a href="#cite_note-githubreleasetag-1">&#91;1&#93;</a></sup></td></tr><tr style="display: none;"><td colspan="2" style="text-align:center"></td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Software_release_life_cycle" title="Software release life cycle">Stable release</a></th><td><div style="margin:0px;">4.0.0
+   / April&#160;17, 2018<span class="noprint">&#59;&#32;6 months ago</span><span style="display:none">&#160;(<span class="bday dtstart published updated">2018-04-17</span>)</span><sup id="cite_ref-ghrelease_2-0" class="reference"><a href="#cite_note-ghrelease-2">&#91;2&#93;</a></sup></div></td></tr><tr style="display:none"><td colspan="2">
+</td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Repository_(version_control)" title="Repository (version control)">Repository</a></th><td><div class="plainlist"><ul><li><span class="url"><a rel="nofollow" class="external text" href="https://github.com/reactjs/redux">github<wbr />.com<wbr />/reactjs<wbr />/redux</a></span></li></ul>
+</div> <a href="https://www.wikidata.org/wiki/Q28957057#P1324" title="Edit this at Wikidata"><img alt="Edit this at Wikidata" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/73/Blue_pencil.svg/10px-Blue_pencil.svg.png" width="10" height="10" style="vertical-align: text-top" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/73/Blue_pencil.svg/15px-Blue_pencil.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/73/Blue_pencil.svg/20px-Blue_pencil.svg.png 2x" data-file-width="600" data-file-height="600" /></a></td></tr><tr><th scope="row" style="white-space: nowrap;">Written in</th><td><a href="/wiki/JavaScript" title="JavaScript">JavaScript</a></td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Computing_platform" title="Computing platform">Platform</a></th><td><a href="/wiki/Cross-platform" class="mw-redirect" title="Cross-platform">Cross-platform</a></td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Software_categories#Categorization_approaches" title="Software categories">Type</a></th><td><a href="/wiki/JavaScript_library" title="JavaScript library">JavaScript library</a></td></tr><tr><th scope="row" style="white-space: nowrap;"><a href="/wiki/Software_license" title="Software license">License</a></th><td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td></tr><tr><th scope="row" style="white-space: nowrap;">Website</th><td><span class="url"><a rel="nofollow" class="external text" href="http://redux.js.org">redux<wbr />.js<wbr />.org</a></span></td></tr></tbody></table>
+<p><b>Redux</b> is an <a href="/wiki/Open-source_software" title="Open-source software">open-source</a> <a href="/wiki/JavaScript_library" title="JavaScript library">JavaScript library</a> for managing application <a href="/wiki/State_(computer_science)" title="State (computer science)">state</a>. It is most commonly used with libraries such as <a href="/wiki/React_(JavaScript_library)" title="React (JavaScript library)">React</a> or <a href="/wiki/Angular_(application_platform)" title="Angular (application platform)">Angular</a> for building <a href="/wiki/User_interface" title="User interface">user interfaces</a>. Similar to (and inspired by) Facebook's <a href="/wiki/React_(JavaScript_library)#Use_of_the_Flux_architecture" title="React (JavaScript library)">Flux architecture</a>, it was created by <a href="/w/index.php?title=Dan_Abramov&amp;action=edit&amp;redlink=1" class="new" title="Dan Abramov (page does not exist)">Dan Abramov</a> and <a href="/w/index.php?title=Andrew_Clark_(Developer)&amp;action=edit&amp;redlink=1" class="new" title="Andrew Clark (Developer) (page does not exist)">Andrew Clark</a>.
+</p>
+<h2><span class="mw-headline" id="Description">Description</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=edit&amp;section=1" title="Edit section: Description">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Redux is a small library with a simple, limited API designed to be a predictable container for application state. It operates in a similar fashion to a <a href="/wiki/Fold_(higher-order_function)" title="Fold (higher-order function)">reducing function</a>, a <a href="/wiki/Functional_programming" title="Functional programming">functional programming</a> concept.
+</p><p>It is influenced by the <a href="/wiki/Functional_programming" title="Functional programming">functional programming</a> language <a href="/wiki/Elm_(programming_language)" title="Elm (programming language)">Elm</a>.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup>
+</p>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=edit&amp;section=2" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Redux was created by <a href="/w/index.php?title=Dan_Abramov&amp;action=edit&amp;redlink=1" class="new" title="Dan Abramov (page does not exist)">Dan Abramov</a> and <a href="/w/index.php?title=Andrew_Clark_(Developer)&amp;action=edit&amp;redlink=1" class="new" title="Andrew Clark (Developer) (page does not exist)">Andrew Clark</a> in 2015.<sup id="cite_ref-abramov_4-0" class="reference"><a href="#cite_note-abramov-4">&#91;4&#93;</a></sup> Abramov began writing the first Redux implementation while preparing for a conference talk at React Europe on hot reloading. Abramov remarks, "I was trying to make a proof of concept of Flux where I could change the logic. And it would let me time travel. And it would let me reapply the future actions on the code change."<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">&#91;5&#93;</a></sup>
+</p><p>Abramov was struck by the similarity of the Flux pattern with a reducing function. "I was thinking about Flux as a reduce operation over time... your stores, they accumulate state in response to these actions. I was thinking of taking this further. What if your Flux store was not a store but a reducer function?"<sup id="cite_ref-abramov_4-1" class="reference"><a href="#cite_note-abramov-4">&#91;4&#93;</a></sup>
+</p><p>Abramov reached out to Clark (author of the Flux implementation Flummox) as a collaborator. Among other things, he credits Clark with making the Redux ecosystem of tools possible, helping to come up with a coherent API, implementing extension points such as middleware and store enhancers.<sup id="cite_ref-abramov_4-2" class="reference"><a href="#cite_note-abramov-4">&#91;4&#93;</a></sup>
+</p>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=edit&amp;section=3" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-githubreleasetag-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-githubreleasetag_1-0">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/reactjs/redux/releases/tag/v0.2.0">Initial release tag</a></span>
+</li>
+<li id="cite_note-ghrelease-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-ghrelease_2-0">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://github.com/reactjs/redux/releases">"Releases – ReactJS/Redux"</a>. <i><a href="/wiki/GitHub" title="GitHub">GitHub</a></i>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=GitHub&amp;rft.atitle=Releases+%E2%80%93+ReactJS%2FRedux&amp;rft_id=https%3A%2F%2Fgithub.com%2Freactjs%2Fredux%2Freleases&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARedux+%28JavaScript+library%29" class="Z3988"></span><style data-mw-deduplicate="TemplateStyles:r861714446">.mw-parser-output cite.citation{font-style:inherit}.mw-parser-output q{quotes:"\"""\"""'""'"}.mw-parser-output code.cs1-code{color:inherit;background:inherit;border:inherit;padding:inherit}.mw-parser-output .cs1-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/9px-Lock-green.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-lock-limited a,.mw-parser-output .cs1-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Lock-gray-alt-2.svg/9px-Lock-gray-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Lock-red-alt-2.svg/9px-Lock-red-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration{color:#555}.mw-parser-output .cs1-subscription span,.mw-parser-output .cs1-registration span{border-bottom:1px dotted;cursor:help}.mw-parser-output .cs1-hidden-error{display:none;font-size:100%}.mw-parser-output .cs1-visible-error{font-size:100%}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration,.mw-parser-output .cs1-format{font-size:95%}.mw-parser-output .cs1-kern-left,.mw-parser-output .cs1-kern-wl-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right,.mw-parser-output .cs1-kern-wl-right{padding-right:0.2em}</style></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/">"An Introduction To Redux"</a>. <i>Smashing Magazine</i>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Smashing+Magazine&amp;rft.atitle=An+Introduction+To+Redux&amp;rft_id=https%3A%2F%2Fwww.smashingmagazine.com%2F2016%2F06%2Fan-introduction-to-redux%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARedux+%28JavaScript+library%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r861714446"/></span>
+</li>
+<li id="cite_note-abramov-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-abramov_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-abramov_4-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-abramov_4-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Abramov, Dan. <a rel="nofollow" class="external text" href="http://threedevsandamaybe.com/the-history-of-react-and-flux-with-dan-abramov/">"The History of React and Flux with Dan Abramov"</a>. <i>Three Devs and a Maybe</i><span class="reference-accessdate">. Retrieved <span class="nowrap">7 April</span> 2018</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Three+Devs+and+a+Maybe&amp;rft.atitle=The+History+of+React+and+Flux+with+Dan+Abramov&amp;rft.aulast=Abramov&amp;rft.aufirst=Dan&amp;rft_id=http%3A%2F%2Fthreedevsandamaybe.com%2Fthe-history-of-react-and-flux-with-dan-abramov%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARedux+%28JavaScript+library%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r861714446"/></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><cite class="citation web">Abramov, Dan. <a rel="nofollow" class="external text" href="https://tylermcginnis.com/podcast/dan-abramov/">"Progression, Curiosity, and Burnout with Dan Abramov"</a>. <i>TylerMcGinnis.com</i><span class="reference-accessdate">. Retrieved <span class="nowrap">7 April</span> 2018</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=TylerMcGinnis.com&amp;rft.atitle=Progression%2C+Curiosity%2C+and+Burnout+with+Dan+Abramov&amp;rft.aulast=Abramov&amp;rft.aufirst=Dan&amp;rft_id=https%3A%2F%2Ftylermcginnis.com%2Fpodcast%2Fdan-abramov%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARedux+%28JavaScript+library%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r861714446"/></span>
+</li>
+</ol></div></div>
+
+<!-- 
+NewPP limit report
+Parsed by mw1325
+Cached time: 20181113175013
+Cache expiry: 1900800
+Dynamic content: false
+CPU time usage: 0.252 seconds
+Real time usage: 0.335 seconds
+Preprocessor visited node count: 1112/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 17246/2097152 bytes
+Template argument size: 1892/2097152 bytes
+Highest expansion depth: 25/40
+Expensive parser function count: 2/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 10799/5000000 bytes
+Number of Wikibase entities loaded: 1/400
+Lua time usage: 0.141/10.000 seconds
+Lua memory usage: 3.47 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  308.616      1 -total
+ 70.91%  218.831      2 Template:Infobox
+ 69.67%  215.019      1 Template:Infobox_software
+ 29.49%   91.007      1 Template:Reflist
+ 25.57%   78.925      4 Template:Cite_web
+ 23.01%   71.013      1 Template:Plainlist
+ 22.43%   69.227      2 Template:URL
+ 19.73%   60.883      1 Template:Wikidata
+ 11.61%   35.825      2 Template:Start_date_and_age
+  8.05%   24.855      1 Template:Infobox_software/simple
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:53428852-0!canonical and timestamp 20181113175012 and revision id 845110377
+ -->
+</div><noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Redux_(JavaScript_library)&amp;oldid=845110377">https://en.wikipedia.org/w/index.php?title=Redux_(JavaScript_library)&amp;oldid=845110377</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:JavaScript_libraries" title="Category:JavaScript libraries">JavaScript libraries</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Pages_using_Infobox_software_with_unknown_parameters" title="Category:Pages using Infobox software with unknown parameters">Pages using Infobox software with unknown parameters</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Redux+%28JavaScript+library%29" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Redux+%28JavaScript+library%29" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+							<li id="ca-nstab-main" class="selected"><span><a href="/wiki/Redux_(JavaScript_library)" title="View the content page [c]" accesskey="c">Article</a></span></li><li id="ca-talk"><span><a href="/wiki/Talk:Redux_(JavaScript_library)" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>						</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+						<h3 id="p-variants-label">
+							<span>Variants</span>
+						</h3>
+						<ul class="menu">
+													</ul>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+							<li id="ca-view" class="collapsible selected"><span><a href="/wiki/Redux_(JavaScript_library)">Read</a></span></li><li id="ca-edit" class="collapsible"><span><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=edit" title="Edit this page [e]" accesskey="e">Edit</a></span></li><li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>						</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+						<h3 id="p-cactions-label"><span>More</span></h3>
+						<ul class="menu">
+													</ul>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+								<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+			<div class="body">
+								<ul>
+					<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+			<div class="body">
+								<ul>
+					<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+			<div class="body">
+								<ul>
+					<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Redux_(JavaScript_library)" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Redux_(JavaScript_library)" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;oldid=845110377" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q28957057" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Redux_%28JavaScript_library%29&amp;id=845110377" title="Information on how to cite this page">Cite this page</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+			<div class="body">
+								<ul>
+					<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Redux+%28JavaScript+library%29">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:ElectronPdf&amp;page=Redux+%28JavaScript+library%29&amp;action=show-download-screen">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Redux_(JavaScript_library)&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label">
+			<h3 id="p-lang-label">Languages</h3>
+			<div class="body">
+								<ul>
+					<li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Redux_(JavaScript-Bibliothek)" title="Redux (JavaScript-Bibliothek) – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Redux" title="Redux – French" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/Redux" title="Redux – Ukrainian" lang="uk" hreflang="uk" class="interlanguage-link-target">Українська</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/Redux_(JavaScript%E5%87%BD%E5%BC%8F%E5%BA%AB)" title="Redux (JavaScript函式庫) – Chinese" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li>				</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q28957057#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+				<div id="footer" role="contentinfo">
+						<ul id="footer-info">
+								<li id="footer-info-lastmod"> This page was last edited on 9 June 2018, at 13:08<span class="anonymous-show">&#160;(UTC)</span>.</li>
+								<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//foundation.wikimedia.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//foundation.wikimedia.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+							</ul>
+						<ul id="footer-places">
+								<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+								<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+								<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+								<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+								<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+								<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+								<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Redux_(JavaScript_library)&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+							</ul>
+										<ul id="footer-icons" class="noprint">
+										<li id="footer-copyrightico">
+						<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>					</li>
+										<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>					</li>
+									</ul>
+						<div style="clear: both;"></div>
+		</div>
+		
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.252","walltime":"0.335","ppvisitednodes":{"value":1112,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1500000},"postexpandincludesize":{"value":17246,"limit":2097152},"templateargumentsize":{"value":1892,"limit":2097152},"expansiondepth":{"value":25,"limit":40},"expensivefunctioncount":{"value":2,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":10799,"limit":5000000},"entityaccesscount":{"value":1,"limit":400},"timingprofile":["100.00%  308.616      1 -total"," 70.91%  218.831      2 Template:Infobox"," 69.67%  215.019      1 Template:Infobox_software"," 29.49%   91.007      1 Template:Reflist"," 25.57%   78.925      4 Template:Cite_web"," 23.01%   71.013      1 Template:Plainlist"," 22.43%   69.227      2 Template:URL"," 19.73%   60.883      1 Template:Wikidata"," 11.61%   35.825      2 Template:Start_date_and_age","  8.05%   24.855      1 Template:Infobox_software/simple"]},"scribunto":{"limitreport-timeusage":{"value":"0.141","limit":"10.000"},"limitreport-memusage":{"value":3642693,"limit":52428800}},"cachereport":{"origin":"mw1325","timestamp":"20181113175013","ttl":1900800,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Redux (JavaScript library)","url":"https:\/\/en.wikipedia.org\/wiki\/Redux_(JavaScript_library)","sameAs":"http:\/\/www.wikidata.org\/entity\/Q28957057","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q28957057","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2017-03-09T04:11:03Z","dateModified":"2018-06-09T13:08:59Z","headline":"JavaScript state container software library"}</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":100,"wgHostname":"mw1241"});});</script>
+	</body>
+</html>
