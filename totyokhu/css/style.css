@@ -1,0 +1,177 @@
+@import url("//fonts.googleapis.com/css?family=Amatic+SC:700|Libre+Baskerville:400|Open+Sans:400");
+
+body, a, a:hover, .footer-text {
+    font-family: "Libre Baskerville";
+    font-size: 9px;
+    font-style: normal;
+    font-weight: normal;
+    color: #111111;
+    line-height: 1.8
+}
+
+button {
+    font-family: "Libre Baskerville";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    color: #111111;
+    border-color: #FF669C;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: #FFFFFF
+}
+
+button:hover {
+    background-color: #ff669c
+}
+
+#wedding-title {
+    font-family: "Amatic SC";
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    color: #FF669C
+}
+
+#wedding-date-location {
+    font-family: "Libre Baskerville";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    color: #111111;
+    text-transform: uppercase
+}
+
+.theme-image {
+    background-position: top center;
+    background-image: url(https://static.xoedge.com/xo-guest-services/assets/guest/themes/lanterns-sherbet/theme_image-a675ee4427d088e82457b789e19f85b5.png)
+}
+
+#main-nav, #main-nav li a {
+    font-size: 13px
+}
+
+#main-nav li a {
+    font-family: "Libre Baskerville";
+    font-style: normal;
+    font-weight: normal;
+    color: #111111;
+    letter-spacing: 1.8px
+}
+
+#main-nav li a:hover, #main-nav li a.selected {
+    color: #ff9a22
+}
+
+#main-container-background {
+    background-repeat: repeat
+}
+
+#main-nav-container.fixed {
+    background-color: rgba(255, 255, 255, 0.98)
+}
+
+#main-container-background, #main-nav > ul > li > ul {
+    background-color: #FFFFFF
+}
+
+.section-title, .event-section-title, .wedding-event-section-title, .wedding-party-section-title, .location-section-title, .album-section-title, .photo-section-title, .registry-section-title {
+    font-family: "Libre Baskerville";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: normal;
+    color: #111111
+}
+
+.section-separator, .event-section-separator, .wedding-event-section-separator, .wedding-party-section-separator, .location-section-separator, .album-section-separator, .photo-section-separator, .registry-section-separator {
+    background-position: center;
+    background-image: url(https://static.xoedge.com/xo-guest-services/assets/guest/themes/lanterns-sherbet/section_separator-faceabf4849eec990f4915a343653f07.png);
+    height: 9px;
+    background-repeat: no-repeat
+}
+
+.item-title, .event-title, .wedding-event-title, .location-title {
+    font-family: "Amatic SC";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    color: #FF9A22
+}
+
+.item-separator, .event-separator, .wedding-event-separator, .wedding-party-separator, .location-separator, .registry-separator {
+    background-position: center;
+    background-image: url(https://static.xoedge.com/xo-guest-services/assets/guest/themes/lanterns-sherbet/item_separator-7a29d3e6d728ff1d9fee2619e0196894.png);
+    height: 9px;
+    background-repeat: no-repeat
+}
+
+.section-separator, .event-section-separator, .wedding-event-section-separator, .wedding-party-section-separator, .location-section-separator, .album-section-separator, .photo-section-separator, .registry-section-separator {
+    background-size: auto
+}
+
+#header {
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17)
+}
+
+#main-container {
+    padding-bottom: 0 !important
+}
+
+.theme-image-container-bottom {
+    height: 0;
+    padding-bottom: 0
+}
+
+@media (max-width: 767px) {
+    #wedding-date-location {
+        font-size: 12px !important
+    }
+}
+
+.theme-image-container {
+    margin-bottom: -5%
+}
+
+@media (min-width: 1200px) {
+    .theme-image-container {
+        margin-bottom: -50px
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+/*#gallery-div img {
+    max-width: 70%;
+}*/
