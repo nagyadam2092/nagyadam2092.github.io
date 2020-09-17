@@ -359,6 +359,7 @@
         display: inline-block;
         border: none;
         transition: all 0.4s ease 0s;
+        cursor: pointer;
     }
 </style>
 
@@ -450,7 +451,7 @@
         </article>
 
     </section>
-    <div class="button_cont" align="center" style="position: fixed; bottom: 10%; left: 50%;"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener" onclick="demoFromHTML()">DOWNLOAD AS PDF</a></div>
+    <div class="button_cont" align="center" style="position: fixed; bottom: 10%; left: 50%;"><a class="example_a" rel="nofollow noopener" onclick="demoFromHTML()">DOWNLOAD AS PDF</a></div>
     <!-- <button style="position: absolute; bottom: 20px; right: 20px;" id="downloadPdf" onclick="demoFromHTML()">DOWNLOAD PDF</button> -->
 
 </body>
@@ -467,7 +468,7 @@
         }
         return params;
     };
-    function demoFromHTML() {
+    function demoFromHTML(e) {
         var element = document.getElementById('content');
         var opt = {
             margin:       1,
@@ -478,16 +479,14 @@
         };
 
         // New Promise-based usage:
-        html2pdf().set(opt).from(element).save();   
+        html2pdf().set(opt).from(element).save();
+        return false;
     }
 
 
     var params = getParams(window.location.href);
-        var greeting = params.greeting;
-        if (!greeting) {
-            alert('need greeting!');
-        }
-        document.getElementById('greeting').innerHTML = greeting;
+    var greeting = params.greeting  || 'Hallo!';
+    document.getElementById('greeting').innerHTML = greeting;
 </script>
 
 </html>
