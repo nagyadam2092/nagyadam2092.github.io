@@ -32,6 +32,7 @@
         dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
         dd { width: 600px; float: right; }
         dd.clear { float: none; margin: 0; height: 15px; }
+        .float-right { float: right; }
      </style>
 </head>
 
@@ -46,6 +47,9 @@
             <!-- Microformats! -->
         
             <h1 class="fn">Adam Nagy</h1>
+            <p>
+              <h2>Senior Software Engineer and Engineering Manager</h2>
+            </p>
         
             <p>
                 Email: <a class="email" href="mailto:nagyadam2092@gmail.com">nagyadam2092 at gmail dot com</a>
@@ -163,9 +167,12 @@
         </dl>
         
         <div class="clear"></div>
+        <div class="float-right">Berlin, <span id="year">2022</span></div>
     
     </div>
-
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
